@@ -4,7 +4,7 @@ This repository details cloud computing resources at NOAA Fisheries, with a focu
 
 ## Why Cloud?
 
-All NOAA datasets must be uploaded in the cloud by 2026, and all on-premesis computing resources for NOAA Fisheries are planned to be retired by 2027.  Working entirely in the cloud allows scientists to make our programs more efficient, without losing time to downloading/uploading.  With the transition timeline away from existing resources, we have compiled documentation here to share and allow scientists who previously worked on uber computers to adapt their workflows more quickly.  Some programs can be run locally just as efficiently as they can be in the cloud [add use cases].
+All NOAA datasets must be uploaded in the cloud by 2026, and all on-premesis computing resources for NOAA Fisheries are planned to be retired by 2027.  Working entirely in the cloud allows scientists to make programs more efficient, without losing time to downloading/uploading.  With the transition timeline away from existing resources, we have compiled documentation here to share and allow scientists who previously worked on uber computers to adapt their workflows more quickly.  Some programs can be run locally just as efficiently as they can be in the cloud [add use cases].
 
 ## Fisheries Cloud Program
 
