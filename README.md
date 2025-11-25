@@ -18,13 +18,31 @@ Selecting the right size, importance of shutting down workstation when done, whe
 
 Work through local IT.  [Add instructions for each Center here?]  Reference [Eli's documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) related to Google shared drive vs buckets and speed.
 
+Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS)
+
 ## Linking Workstation to GitHub
+
+Link to Alex's work here--include all files in a folder within this repo?
 
 ## Linking Workstation to Bucket
 
+Include browser and --nobrowser options with troubleshooting and perhaps screenshots.
+
 ### Reading from Buckets
 
+Link to Alex's work here
+
 ### Writing to Buckets
+
+Link to Alex's work here
+
+### Best Practices
+
+Suggested ways to set up workflows to easily move between running locally and in the cloud if desired.
+
+## Alternative Options
+
+If cloud computing resources are not necessary, alternative options include accessing data in the cloud with local computing resources.  With Google Drive for Desktop, data on shared drives can be accessed using G:/ the same as we access shared drives on local computers.  Alternatively, if cloud computing workstations have sufficient storage for the programs that you're running, it is not absolutely necessary to link to a data bucket.  [Alternate ways to pull data down from the workstation if not a data bucket?  Can these also just write to shared drives?  Much slower--but wanting to provide options for different workflows].
 
 
 ## Acknowledgements 
