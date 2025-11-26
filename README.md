@@ -22,19 +22,51 @@ Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/
 
 ## Linking Workstation to GitHub
 
+Workstations only need to be linked to GitHub once.  This can be done by copying and pasting [this code] in your R terminal.  [Please note that ctrl+V does not work for pasting into an R terminal; you must right click and select 'Paste'.]  Once the link is made to your GitHub repository, you can push and pull changes as you would from any other machine.
+
 Link to Alex's work here--include all files in a folder within this repo?
 
 ## Linking Workstation to Bucket
 
-Include browser and --nobrowser options with troubleshooting and perhaps screenshots.
+Buckets need to be mounted at the start of every session.  This can be done by copying and pasting [this code] in your R terminal.  [Please note that ctrl+V does not work for pasting into an R terminal; you must right click and select 'Paste'.]  You will need to follow instructions from the R terminal.  This includes following a link that will allow you to authenticate your Google account from the browser, which will produce a chunk of code to paste back into your R terminal.
+
+This is the most finicky and potentially user-specific step of the process.  You may have to paste the code through line 14, `gcloud auth application-default login --no-launch-browser`, and follow the prompts to authenticate before copy and pasting the rest of the script to actually mount the bucket.
+
+*We'll need to change the bucket name to the public one that Eli plans to use for Openscapes/training purposes*
+
+### Validating the Connection 
+
+From the code provided previously to mount a data bucket, we have named the bucket `my_gsc_bucket` and stick with this nomenclature throughout.  If you are still working in the R Terminal, you can validate the connection using
+
+`ls -l "$MOUNT_POINT"`
+
+If you are working in a regular R Script or Console, you can check the contents of the bucket using
+
+`list.files("~/my_gcs_bucket")`
+
+Additionally, to view contents within subfolders, you can use
+
+`list.files(path = "~/my_gcs_bucket/subfolder")`
+
 
 ### Reading from Buckets
 
-Link to Alex's work here
+Once the connection to the Data Bucket is made, you can run R scripts as usual, pointing to the bucket location.  For example,
+
+`load('~/my_gcs_bucket/subfolder/sampdata1.RData') `
+
+`data <- read.csv("~/my_gcs_bucket/subfolder/sampdata2.csv")`
+
+both work to load an RData image and .csv file, respectively.
+
 
 ### Writing to Buckets
 
-Link to Alex's work here
+Writing to buckets works similarly.  If the 'data' file above was cleaned on the Workstation and named 'data2' in R, this could be written directly to the workstation as 'sampdata2_clean.csv'.
+
+`write.csv(data2,"~/my_gcs_bucket/subfolder/sampdata2_clean.csv")`
+
+
 
 ### Best Practices
 
