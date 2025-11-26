@@ -32,9 +32,17 @@ Workstations will remain linked to GitHub until the PAT expires and persists eve
 
 ## Linking Workstation to Bucket
 
-Buckets need to be mounted each time a workstation is launched. This can be done by copying and pasting this [Mount Bucket code](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/mount_bucket.R) in your R terminal. [Please note that ctrl+V does not work for pasting into an R terminal; you must right click and select 'Paste'.] You will need to follow instructions from the R terminal. This includes following a link that will allow you to authenticate your Google account from the browser, which will produce a chunk of code to paste back into your R terminal.
+Buckets need to be mounted each time a workstation is started and should persist across all sessions until the workstation is turned off. Mounting a bucket requires an active terminal (the tab next to the R console in RStudio and Positron). Copy and paste the [R/mount_bucket.R](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/mount_bucket.R) code directly in the terminal. [Please note that ctrl+v does not work for pasting into an R terminal; ctrl+shift+v or manually right click and select 'Paste'. ] The code is commented with instructions and can be pasted line by line or all at once.
 
-This is the most finicky and potentially user-specific step of the process. You may have to paste the code through [line 17](https://github.com/SEFSC/cloud_computing_SSMSE_starter/blob/0d3689835cd279d37bf01e47fe8b7ba8e426b485/mount_bucket.R#L17), `gcloud auth application-default login --no-launch-browser`, follow the prompts to authenticate (including pasting the output from your browser directly into R Terminal), then copy and paste the rest of the script in the R Terminal to actually mount the bucket.
+The terminal will prompt you to authenticate your google account on [line 17](https://github.com/SEFSC/cloud_computing_SSMSE_starter/blob/0d3689835cd279d37bf01e47fe8b7ba8e426b485/mount_bucket.R#L17):
+
+```{r}
+gcloud auth application-default login --no-launch-browser
+```
+
+Follow the prompts to authenticate (including pasting the output from your browser directly into Terminal), then press enter or copy and paste the rest of the script in the R Terminal to continue the process. This is the most finicky and potentially user-specific step of the process.
+
+The remaining code will install or update `gcsfuse` on the workstation and mount the bucket. Once mounted a first time, lines 41-47 can be used to remount a bucket after a workstation is shutdown and skip the authentication/installation process.
 
 *We'll need to change the bucket name to the public one that Eli plans to use for Openscapes/training purposes*
 
