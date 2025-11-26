@@ -22,15 +22,15 @@ Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/
 
 ## Linking Workstation to GitHub
 
-Workstations only need to be linked to GitHub once.  This can be done by copying and pasting [this code] in your R terminal.  [Please note that ctrl+V does not work for pasting into an R terminal; you must right click and select 'Paste'.]  Once the link is made to your GitHub repository, you can push and pull changes as you would from any other machine.
+Workstations only need to be linked to GitHub once.  This can be done by copying and pasting this [GitHub Setup code](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/github_setup.R) in your R terminal.  [Please note that ctrl+V does not work for pasting into an R terminal; you must right click and select 'Paste'.]  Once the link is made to your GitHub repository, you can push and pull changes as you would from any other machine.
 
 Link to Alex's work here--include all files in a folder within this repo?
 
 ## Linking Workstation to Bucket
 
-Buckets need to be mounted at the start of every session.  This can be done by copying and pasting [this code] in your R terminal.  [Please note that ctrl+V does not work for pasting into an R terminal; you must right click and select 'Paste'.]  You will need to follow instructions from the R terminal.  This includes following a link that will allow you to authenticate your Google account from the browser, which will produce a chunk of code to paste back into your R terminal.
+Buckets need to be mounted at the start of every session.  This can be done by copying and pasting this [Mount Bucket code](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/mount_bucket.R) in your R terminal.  [Please note that ctrl+V does not work for pasting into an R terminal; you must right click and select 'Paste'.]  You will need to follow instructions from the R terminal.  This includes following a link that will allow you to authenticate your Google account from the browser, which will produce a chunk of code to paste back into your R terminal.
 
-This is the most finicky and potentially user-specific step of the process.  You may have to paste the code through line 14, `gcloud auth application-default login --no-launch-browser`, and follow the prompts to authenticate before copy and pasting the rest of the script to actually mount the bucket.
+This is the most finicky and potentially user-specific step of the process.  You may have to paste the code through [line 17](https://github.com/SEFSC/cloud_computing_SSMSE_starter/blob/0d3689835cd279d37bf01e47fe8b7ba8e426b485/mount_bucket.R#L17), `gcloud auth application-default login --no-launch-browser`, follow the prompts to authenticate (including pasting the output from your browser directly into R Terminal), then copy and paste the rest of the script in the R Terminal to actually mount the bucket.
 
 *We'll need to change the bucket name to the public one that Eli plans to use for Openscapes/training purposes*
 
