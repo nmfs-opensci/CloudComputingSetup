@@ -4,7 +4,9 @@ This repository details cloud computing resources at NOAA Fisheries, with a focu
 
 ## Why Cloud?
 
-All NOAA datasets must be uploaded in the cloud by 2026, and all on-premesis computing resources for NOAA Fisheries are planned to be retired by 2027. Working entirely in the cloud allows scientists to make programs more efficient, without losing time to downloading/uploading. With the transition timeline away from existing resources, we have compiled documentation here to share and allow scientists who previously worked on uber computers to adapt their workflows more quickly. Some programs can be run locally just as efficiently as they can be in the cloud [add use cases].
+All NOAA datasets must be uploaded in the cloud by 2026, and all on-premises computing resources for NOAA Fisheries are planned to be retired by 2027. Working entirely in the cloud allows scientists to make workflows more efficient, without losing time to downloading/uploading. With the transition timeline away from existing resources, we have compiled documentation here to share and allow scientists who previously worked on uber computers to adapt their workflows more quickly.
+
+Think of the Google Cloud Workstations as super/uber computers in the cloud, or online, instead of physically housed at a NMFS facility. When running code that might take hours or days, a workstation can do the job while you retain full functionality of your local PC. Any work that previously required the uber computers or multiple PCs should be transitioned to the cloud.
 
 ## NOAA Fisheries Cloud Program
 
@@ -12,9 +14,59 @@ NOAA Fisheries Cloud Program rolled out a Cloud Compute Accelerator Pilot in ear
 
 ## Setting up a Google Cloud Workstation
 
+A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and costs money whether it is in use or not. Which is why workstations should be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on github and your inputs/outputs persisting on cloud storage.
+
 *Selecting the right size, importance of shutting down workstation when done, when to use/not to use workstations, etc.*
 
-**BACK UP YOUR WORK** and use the cloud workstations to run existing scripts, not to develop code.  It is important to the community that we monitor usage for costs and be aware that these workstations automatically delete after 6 months of no use.  High resource users, please see [Fisheries Cloud Program Section 4.0 High-Performance and Custom Workstations (FMC-Funded Option)](https://docs.google.com/document/d/1nziPdPULoRWOYQ9WKzISNUgJvANACvfYpFr1z3Ro2Bc/edit?tab=t.0#heading=h.65j2qoyirqa8): "The enterprise offering is designed to cover standard analytical needs. If your work requires high-cost, specialized resources, such as GPUs, larger machine types (beyond Large), or custom-developed images for specific program workflows, these resources are available, and treated as independent GCP projects, and billed according to the annual GCP cost recovery process."
+### Selecting the right size workstation
+
+As with previous uber computer work, code should be written and troubleshooted locally before being executed in a workstation. During the troubleshooting process, you should get an idea of what storage and processing requirements you may have via benchmarking. For many processes, a workstation does not need to be a perfect fit, but below are some simple methods for benchmarking your work to better understand which size workstation you should select.
+
+#### Benchmarking Storage Space
+
+The workstation you select will need enough storage to hold all of your inputs, outputs, and temporary files generated during processing. The NOAA Fisheries Cloud Program provides workstations with 10GB, 50 GB, and 100GB worth of disk space. You must consider if your process will fit within 100 GB before using a workstation.
+
+Since storage usage scales consistently, you can calculate the total output data by multiplying one unit of output data by however many iterations of code you plan on running. Add that to the total input data, and you know the minimum storage requirements of your process.
+
+If your storage minimum is higher than the "large" workstation configuration (100 GB) then you will need to offload/delete data during the process, use a Google Bucket (see below), or request a custom configuration.
+
+#### Benchmarking Processing Power
+
+The processing power required for a process is more complex than storage space because some code scales with additional CPU and RAM. There are a few key questions you should ask when choosing processing power:
+
+1.  Is the code parallelized?
+
+    If no, "small" will probably meet your needs unless your code is RAM or storage intensive.
+
+    If yes, select the machine based on how many threads can it use simultaneously.
+
+2.  How long does the process take, and would upgrading improve that time?
+
+    Using the "Wall-Clock" method, you can measure how long 1 iteration takes (`r R:Sys.time()`) and extrapolate that out to however many iterations you plan on running. If your code is parallized and improves with additional cores/RAM and you need the results as soon as possible, use the largest machine.
+
+3.  How RAM intensive is the code?
+
+    If your code maxes out the RAM on your local machine, it may be worth it to benchmark your code to better understand how much RAM you will need on a workstation. The R `bench` package can be used to calculate the RAM required for a process called "run_simulation":
+
+    ```{r}
+    install.packages(bench)
+    library(bench)
+
+    results <- bench::mark(
+      my_intensive_process = run_simulation(),
+      iterations = 10,
+      check = FALSE 
+    )
+
+    print(results)
+    ```
+    \
+
+When in doubt, you can start with the smallest workstation for additional troubleshooting and upgrade as needed.  
+
+### Using a Workstation
+
+**BACK UP YOUR WORK** and use the cloud workstations to run existing scripts, not to develop code. It is important to the community that we monitor usage for costs and be aware that these workstations automatically delete after 6 months of no use. High resource users, please see [Fisheries Cloud Program Section 4.0 High-Performance and Custom Workstations (FMC-Funded Option)](https://docs.google.com/document/d/1nziPdPULoRWOYQ9WKzISNUgJvANACvfYpFr1z3Ro2Bc/edit?tab=t.0#heading=h.65j2qoyirqa8): "The enterprise offering is designed to cover standard analytical needs. If your work requires high-cost, specialized resources, such as GPUs, larger machine types (beyond Large), or custom-developed images for specific program workflows, these resources are available, and treated as independent GCP projects, and billed according to the annual GCP cost recovery process."
 
 ## Requesting a Google Data Bucket
 
