@@ -20,6 +20,8 @@ A Google Cloud Workstation is a virtual machine (VM) that can be customized to m
 
 ### Selecting the right size workstation
 
+The IDE or program you use to run your code will decide which workstation type you choose (Base, Code OSS, Python, R, Posit Workbench). This section focuses on which size you should choose.
+
 As with previous uber computer work, code should be written and troubleshooted locally before being executed in a workstation. During the troubleshooting process, you should get an idea of what storage and processing requirements you may have via benchmarking. For many processes, a workstation does not need to be a perfect fit, but below are some simple methods for benchmarking your work to better understand which size workstation you should select.
 
 #### Benchmarking Storage Space
@@ -34,7 +36,7 @@ If your storage minimum is higher than the "large" workstation configuration (10
 
 The processing power required for a process is more complex than storage space because some code scales with additional CPU and RAM. There are a few key questions you should ask when choosing processing power:
 
-1.  Is the code parallelized?
+1.  Does the code run in paralel?
 
     If no, "small" will probably meet your needs unless your code is RAM or storage intensive.
 
@@ -42,27 +44,13 @@ The processing power required for a process is more complex than storage space b
 
 2.  How long does the process take, and would upgrading improve that time?
 
-    Using the "Wall-Clock" method, you can measure how long 1 iteration takes (`r R:Sys.time()`) and extrapolate that out to however many iterations you plan on running. If your code is parallized and improves with additional cores/RAM and you need the results as soon as possible, use the largest machine.
+    Using the "Wall-Clock" method, you can measure how long 1 iteration takes (`r R:Sys.time()`) and extrapolate that out to however many iterations you plan on running. If your code runs in parallel and improves with additional cores/RAM and you need the results as soon as possible, use the largest machine.
 
 3.  How RAM intensive is the code?
 
-    If your code maxes out the RAM on your local machine, it may be worth it to benchmark your code to better understand how much RAM you will need on a workstation. The R `bench` package can be used to calculate the RAM required for a process called "run_simulation":
+    If your code maxes out the RAM on your local machine, it may be worth it to benchmark your code to better understand how much RAM you will need on a workstation. The R `bench` package or Python `pyperf` can be used to calculate the RAM required.
 
-    ```{r}
-    install.packages(bench)
-    library(bench)
-
-    results <- bench::mark(
-      my_intensive_process = run_simulation(),
-      iterations = 10,
-      check = FALSE 
-    )
-
-    print(results)
-    ```
-    \
-
-When in doubt, you can start with the smallest workstation for additional troubleshooting and upgrade as needed.  
+When in doubt, you can start with the smallest workstation for additional troubleshooting and upgrade as needed.
 
 ### Using a Workstation
 
