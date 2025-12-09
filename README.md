@@ -36,7 +36,7 @@ If your storage minimum is higher than the "large" workstation configuration (10
 
 The processing power required for a process is more complex than storage space because some code scales with additional CPU and RAM. There are a few key questions you should ask when choosing processing power:
 
-1.  Does the code run in paralel?
+1.  Does the code run in parallel?
 
     If no, "small" will probably meet your needs unless your code is RAM or storage intensive.
 
