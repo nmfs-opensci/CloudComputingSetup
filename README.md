@@ -52,17 +52,13 @@ The processing power required for a process is more complex than storage space b
 
 When in doubt, you can start with the smallest workstation for additional troubleshooting and upgrade as needed.
 
-### Using a Workstation
+## Using a Workstation
 
 **BACK UP YOUR WORK** and use the cloud workstations to run existing scripts, not to develop code. It is important to the community that we monitor usage for costs and be aware that these workstations automatically delete after 6 months of no use. High resource users, please see [Fisheries Cloud Program Section 4.0 High-Performance and Custom Workstations (FMC-Funded Option)](https://docs.google.com/document/d/1nziPdPULoRWOYQ9WKzISNUgJvANACvfYpFr1z3Ro2Bc/edit?tab=t.0#heading=h.65j2qoyirqa8): "The enterprise offering is designed to cover standard analytical needs. If your work requires high-cost, specialized resources, such as GPUs, larger machine types (beyond Large), or custom-developed images for specific program workflows, these resources are available, and treated as independent GCP projects, and billed according to the annual GCP cost recovery process."
 
-## Requesting a Google Data Bucket
+The optimal workflow for a workstation is to have a github repository with all the necessary code to run your process. Thus, the first step when opening a workstation should be connecting to Github.
 
-Work through local IT. [Add instructions for each Center here?] Reference [Eli's documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) related to Google shared drive vs buckets and speed.
-
-Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS)
-
-## Linking Workstation to GitHub
+### Linking Workstation to GitHub
 
 The quickest and most persistent method for linking a workstation to a Github Enterprise Account is with a Person Access Token (PAT). This can be done by reading the instructions and executing the code in [R/github_setup.R](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/github_setup.R). Before executing the script you will need to generate a PAT, bellow are relevant PAT documentation (also linked in script):
 
@@ -71,6 +67,33 @@ The quickest and most persistent method for linking a workstation to a Github En
 3.  [NMFS GitHub Governance Authentication Tutorial Video](https://drive.google.com/file/d/1tbbw_xXARK689Zj5tm4lVo18aBaXhdKX/view?t=4) (Requires NOAA Google Drive access)
 
 Workstations will remain linked to GitHub until the PAT expires and persists even if the workstation is shutdown. Once the link is made to your GitHub repository, you can push and pull changes as you would from any other machine.
+
+### Customizing Your Configuration
+
+Code generally requires a specific computing environment to work properly, this is especially important when treating workstations as temporary machines. Below are some best practices for ensuring your environment is set-up before running your code.
+
+#### RStudio
+
+By default the RStudio configuration will attempt to download packages via source code instead of binary through the posit package manager which drastically slows the installation progress down. Before starting any installations use the following code to source binary:
+
+```{r}
+repo_line <- 'options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))'
+writeLines(repo_line, "~/.Rprofile")
+# Restart R session to lock in Rprofile changes
+# Session -> Restart R or Ctrl+Shift+F10
+```
+
+You must restart the RStudio's R session before you install any packages. This should allow your workstation to install packages just as fast as a posit configuration.
+
+#### Posit
+
+The Posit configuration is the easiest environment to set-up, whether you are using the Positron or RStudio IDE. Since posit uses the posit package manager by default, any packages you install via install.packages() should install quickly and easily. When installing the first package you will be prompted to create a personal folder for the packages to be stored in home/user, you should type "yes" twice and that will ensure that your packages will persist between opening and closing the workstation.
+
+## Requesting a Google Data Bucket
+
+Work through local IT. [Add instructions for each Center here?] Reference [Eli's documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) related to Google shared drive vs buckets and speed.
+
+Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS)
 
 ## Linking Workstation to Bucket
 
