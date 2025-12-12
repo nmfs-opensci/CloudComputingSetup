@@ -89,6 +89,12 @@ You must restart the RStudio's R session before you install any packages. This s
 
 The Posit configuration is the easiest environment to set-up, whether you are using the Positron or RStudio IDE. Since posit uses the posit package manager by default, any packages you install via install.packages() should install quickly and easily. When installing the first package you will be prompted to create a personal folder for the packages to be stored in home/user, you should type "yes" twice and that will ensure that your packages will persist between opening and closing the workstation.
 
+### Running Code
+
+In workstations, a key benefit is being able to start code running and walk away until it finishes. You do this by running your code in the Posit Workbench or R Background Jobs. This means you need to build your scripts in such a way that no user interaction is required (i.e. confirmations y/n or authentication). Any authentication or package installation should be done with you actively there, then you can run your totally independent code.
+
+Fun Tip: You can use the R:bastula package to automate emails to yourself when your code has finished. See the blastula_tutorial.R for more details.
+
 ## Requesting a Google Data Bucket
 
 Work through local IT. [Add instructions for each Center here?] Reference [Eli's documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) related to Google shared drive vs buckets and speed.
