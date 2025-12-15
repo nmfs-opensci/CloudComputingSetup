@@ -14,7 +14,7 @@ NOAA Fisheries Cloud Program rolled out a Cloud Compute Accelerator Pilot in ear
 
 ## Setting up a Google Cloud Workstation
 
-A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and incurs long-term storage costs whether it is in use or not. Workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.  
+A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and incurs long-term storage costs whether it is in use or not. Ultimately, workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.  
 
 ### Selecting the right size workstation
 
@@ -52,7 +52,7 @@ When in doubt, you can start with the smallest workstation for additional troubl
 
 ## Using a Workstation
 
-**BACK UP YOUR WORK** and use the cloud workstations to run existing scripts, not to develop code. Hourly compute costs are incurred when the workstation has been "Started", so ensure that each workstation is "Stopped" when runs are complete and the computing session is no longer in use. Be aware that these workstations automatically delete after 6 months of no use.  The optimal workflow for a workstation is to have a GitHub repository with all the necessary code to run your process. Thus, the first step when opening a workstation should be connecting to GitHub.
+**BACK UP YOUR WORK** and use the cloud workstations to run existing scripts, not to develop code. Hourly compute costs are incurred when the workstation has been "Started", so ensure that each workstation is "Stopped" when runs are complete and the computing session is no longer in use. Be aware that these workstations automatically delete after 6 months of no use to avoid long term storage costs.  The optimal workflow for a workstation is to have a GitHub repository with all the necessary code to run your process. Thus, the first step when opening a workstation should be connecting to GitHub.
 
 ### Linking Workstation to GitHub
 
@@ -79,11 +79,11 @@ writeLines(repo_line, "~/.Rprofile")
 # Session -> Restart R or Ctrl+Shift+F10
 ```
 
-You must restart the RStudio's R session before you install any packages. This should allow your workstation to install packages just as fast as a posit configuration.
+You must restart the RStudio's R session before you install any packages. This should allow your workstation to install packages just as fast as a Posit configuration.
 
 #### Posit
 
-The Posit configuration is the easiest environment to set-up, whether you are using the Positron or RStudio IDE. Since posit uses the posit package manager by default, any packages you install via install.packages() should install quickly and easily. When installing the first package you will be prompted to create a personal folder for the packages to be stored in home/user, you should type "yes" twice and that will ensure that your packages will persist between opening and closing the workstation.
+The Posit configuration is the easiest environment to set-up, whether you are using the Positron or RStudio IDE. Since Posit uses the posit package manager by default, any packages you install via install.packages() should install quickly and easily. When installing the first package you will be prompted to create a personal folder for the packages to be stored in home/user, you should type "yes" twice and that will ensure that your packages will persist between opening and closing the workstation.
 
 ### Running Code
 
@@ -107,9 +107,7 @@ The terminal will prompt you to authenticate your google account on [line 17](ht
 gcloud auth application-default login --no-launch-browser
 ```
 
-Follow the prompts to authenticate (including pasting the output from your browser directly into Terminal), then press enter or copy and paste the rest of the script in the R Terminal to continue the process. This is the most finicky and potentially user-specific step of the process.
-
-The remaining code will install or update `gcsfuse` on the workstation and mount the bucket. Once mounted a first time, lines 41-47 can be used to remount a bucket after a workstation is shutdown and skip the authentication/installation process.
+Follow the prompts to authenticate (including pasting the output from your browser directly into Terminal), then press enter or copy and paste the rest of the script in the R Terminal to continue the process. This is the most finicky and potentially user-specific step of the process.  The remaining code will install or update `gcsfuse` on the workstation and mount the bucket. Once mounted a first time, lines 41-47 can be used to remount a bucket after a workstation is shutdown and skip the authentication/installation process.
 
 *We'll need to change the bucket name to the public one that Eli plans to use for Openscapes/training purposes*
 
@@ -126,6 +124,8 @@ If you are working in a regular R Script or Console, you can check the contents 
 Additionally, to view contents within subfolders, you can use
 
 `list.files(path = "~/my_gcs_bucket/subfolder")`
+
+Please note that within an RStudio cloud interface, the 'Files' GUI typically located in the lower right-hand corner may show an empty `$HOME/my_gsc_bucket` folder, but running the scripts above will verify if the data bucket has been successfully mounted.
 
 ### Reading from Buckets
 
