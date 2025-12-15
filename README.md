@@ -6,7 +6,7 @@ This repository details cloud computing resources at NOAA Fisheries, with a focu
 
 All NOAA datasets must be uploaded in the cloud by 2026, and all on-premises computing resources for NOAA Fisheries are planned to be retired by 2027. Working entirely in the cloud allows scientists to make workflows more efficient, without losing time to downloading/uploading. With the transition timeline away from existing resources, we have compiled documentation here to share and allow scientists who previously worked on uber computers to adapt their workflows more quickly.
 
-Think of the Google Cloud Workstations as super/uber computers in the cloud, or online, instead of physically housed at a NMFS facility. When running code that might take hours or days, a workstation can do the job while you retain full functionality of your local PC. Any work that previously required the uber computers or multiple PCs should be transitioned to the cloud.
+The Google Cloud Workstations are super/uber computers in the cloud, or online, instead of physically housed at a NMFS facility. When running code that might take hours or days, a workstation can do the job while you retain full functionality of your local PC. Any work that previously required the uber computers or multiple PCs should be transitioned to the cloud.
 
 ## NOAA Fisheries Cloud Program
 
@@ -14,7 +14,9 @@ NOAA Fisheries Cloud Program rolled out a Cloud Compute Accelerator Pilot in ear
 
 ## Setting up a Google Cloud Workstation
 
-A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and costs money whether it is in use or not. Which is why workstations should be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on github and your inputs/outputs persisting on cloud storage.
+A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and costs money whether it is in use or not. Workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.
+
+Additional charges are incurred when the workstation has been "Started" and a session has been "Launched", so ensure that each workstation is "Stopped" when runs are complete or the computing session is no longer in use.
 
 *Selecting the right size, importance of shutting down workstation when done, when to use/not to use workstations, etc.*
 
