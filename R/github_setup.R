@@ -10,11 +10,11 @@
 # https://drive.google.com/file/d/1tbbw_xXARK689Zj5tm4lVo18aBaXhdKX/view?t=4
 
 # ctrl+f and replace USER_NAME with your username
-# ctrl+f and replace EMAIL with your email address
+# ctrl+f and replace E_MAIL with your email address
 # ctrl+f and replace TOKEN with your PAT Token
 
 system('git config --global user.name "USER_NAME"')
-system('git config --global user.email "EMAIL"')
+system('git config --global user.email "E_MAIL"')
 system("git config --list")  #check that the info is correct
 
 cred_line <- "https://USER_NAME:TOKEN@github.com"
