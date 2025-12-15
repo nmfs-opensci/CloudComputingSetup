@@ -95,9 +95,9 @@ Fun Tip: You can use the R:bastula package to automate emails to yourself when y
 
 ## Requesting a Google Data Bucket
 
-Work through local IT. [Add instructions for each Center here?] Reference [Eli's documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) related to Google shared drive vs buckets and speed.
+Work through local IT to obtain a data bucket. Permissions to read and write to these data buckets can only be done through IT admin access. [Add instructions for each Center here?] Reference [Eli's documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) for additional information on Google shared drive vs data buckets and speed.
 
-Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS)
+Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS) for reference as to what these data buckets look like in the web interface.  Instructions provided here are for use cases where the user has both read and write access to the data bucket being mounted, but mounting a public database should work similarly (sans write access).
 
 ## Linking Workstation to Bucket
 
@@ -131,7 +131,7 @@ Please note that within an RStudio cloud interface, the 'Files' GUI typically lo
 
 ### Reading from Buckets
 
-Once the connection to the Data Bucket is made, you can run R scripts as usual, pointing to the bucket location. For example,
+Once the connection to the Data Bucket is made, you can run [R scripts](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/readwrite_databucket.R) as usual, pointing to the bucket location. For example,
 
 `load('~/my_gcs_bucket/subfolder/sampdata1.RData')`
 
