@@ -64,6 +64,8 @@ The quickest and most persistent method for linking a workstation to a Github En
 
 Workstations will remain linked to GitHub until the PAT expires and persists even if the workstation is shutdown. Once the link is made to your GitHub repository, you can push and pull changes as you would from any other machine.
 
+Note: [Personal access tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) are less secure. However, some features currently will only work with personal access tokens (classic).  Namely, only personal access tokens (classic) have write access for public repositories that are not owned by you or an organization that you are not a member of.  If linking to your GitHub repository fails using fine-grained tokens, consider switching to classic tokens.
+
 ### Customizing Your Configuration
 
 Code generally requires a specific computing environment to work properly, this is especially important when treating workstations as temporary machines. Below are some best practices for ensuring your environment is set-up before running your code.
