@@ -14,11 +14,7 @@ NOAA Fisheries Cloud Program rolled out a Cloud Compute Accelerator Pilot in ear
 
 ## Setting up a Google Cloud Workstation
 
-A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and costs money whether it is in use or not. Workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.
-
-Additional charges are incurred when the workstation has been "Started" and a session has been "Launched", so ensure that each workstation is "Stopped" when runs are complete or the computing session is no longer in use.
-
-*Selecting the right size, importance of shutting down workstation when done, when to use/not to use workstations, etc.*
+A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and incurs long-term storage costs whether it is in use or not. Workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.  Hourly compute costs are incurred when the workstation has been "Started", so ensure that each workstation is "Stopped" when runs are complete or the computing session is no longer in use.
 
 ### Selecting the right size workstation
 
