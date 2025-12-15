@@ -145,7 +145,9 @@ Writing to buckets works similarly. If the 'data' file above was cleaned on the 
 
 ### Best Practices
 
-Suggested ways to set up workflows to easily move between running locally and in the cloud if desired.
+Best Practices are still under development.  Authors are considering options such as defining 'cloud' file paths and 'local' file paths for reading and writing data that are called at the top of the scripts, allowing for minimal edits between programs that are run in the cloud and locally.  Alternatively, programs could be written exclusively for cloud computing platforms or local computing.
+
+Suggested ways to set up workflows to easily move between running locally and in the cloud if desired?
 
 ## Alternative Options
 
@@ -153,7 +155,7 @@ If cloud computing resources are not necessary, alternative options include acce
 
 ## Acknowledgements
 
-Resources shared by [Eli Holmes](https://github.com/eeholmes), [Alex Norelli](https://github.com/norellia-NOAA), Josh Lee, and Ed Rogers; compiled by [Molly Stevens](https://github.com/mollystevens-noaa).
+Resources shared by [Eli Holmes](https://github.com/eeholmes), Josh Lee, and Ed Rogers; authored by [Alex Norelli](https://github.com/norellia-NOAA) and [Molly Stevens](https://github.com/mollystevens-noaa).
 
 ### Disclaimer
 
