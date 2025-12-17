@@ -12,6 +12,19 @@ The Google Cloud Workstations are super/uber computers in the cloud, or online, 
 
 [NOAA Fisheries Cloud Program](https://docs.google.com/document/d/1nziPdPULoRWOYQ9WKzISNUgJvANACvfYpFr1z3Ro2Bc/edit?tab=t.0) began a Cloud Compute Accelerator Pilot in early 2025: [Enhancing NOAA Fisheries’ Mission with Google Cloud Workstations](https://docs.google.com/document/d/1u7R5KjfEDYdwYTvO9kU6EyeHfG7dV9TQizIyCn8seO0/edit?tab=t.0). Following the conclusion of this Pilot Program, they compiled [Frequently Asked Questions](https://docs.google.com/document/d/1U1PzGS7G70xsXtD6F6WxkjTSCw7bwNVyZ-YnFyOLOqU/edit?tab=t.0) for pilot participants and new users.
 
+### Terminology and Definitions
+
+Terminology used throughout this tutorial are defined below.
+
+| Term          | Definition |
+| ------------- | ------------- |
+| Workstation   | Pre-configured virtual machines listed under “My Workstations” available on NOAA's Google Cloud. |
+| Configuration | The default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large).  |
+| Session       | An active portion of the workstation, shares storage and power.  It is possible to partition a workstation into multiple sessions with different IDEs and core usage. |
+| Data Bucket   | Cloud-based object storage drive that is optimized for code and external to the workstation. |
+
+
+
 ## Setting up a Google Cloud Workstation
 
 A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and incurs long-term storage costs whether it is in use or not. Ultimately, workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.
