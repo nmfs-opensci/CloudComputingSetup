@@ -24,6 +24,10 @@ Terminology used throughout this tutorial are defined below.
 | Data Bucket   | Cloud-based object storage drive that is optimized for code and external to the workstation. |
 
 
+### Requesting a Google Cloud Workstation
+
+The NOAA Fisheries Cloud Program grants access to Google Cloud Workations upon request by filling out the following [form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform).
+
 
 ## Setting up a Google Cloud Workstation
 
