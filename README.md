@@ -108,6 +108,10 @@ You must restart the RStudio's R session before you install any packages. This s
 
 The Posit configuration is the easiest environment to set-up, whether you are using the Positron or RStudio IDE. Since Posit uses the posit package manager by default, any packages you install via install.packages() should install quickly and easily. When installing the first package you will be prompted to create a personal folder for the packages to be stored in home/user, you should type "yes" twice and that will ensure that your packages will persist between opening and closing the workstation.
 
+### Cloning Your Workstation
+
+Best Practices for configuring workstations is still in development.  A current strategy for repeated similar runs includes cloning your workstation.  This solution involves an underlying workstation storage cost (cheaper than run times, but still cost inefficient).  Ideally, we would have workstation templates that require minimal additional configurations, avoiding this burden and associated storage cost.  Base workstations for cloning should be utilized short term and should only be stored if you're running repeated similar tasks at the same time.  All workstations (including the base) should be deleted when the task is completed.
+
 ### Running Code
 
 In workstations, a key benefit is being able to start code running and walk away until it finishes. You do this by running your code in the Posit Workbench or R Background Jobs. This means you need to build your scripts in such a way that no user interaction is required (i.e. confirmations y/n or authentication). Any authentication or package installation should be done with you actively there, then you can run your totally independent code.
