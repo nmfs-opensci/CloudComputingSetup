@@ -180,7 +180,7 @@ If cloud computing resources are not necessary, alternative options include acce
 
 ## Acknowledgements
 
-Resources shared by [Eli Holmes](https://github.com/eeholmes), Josh Lee, and Ed Rogers; authored by [Alex Norelli](https://github.com/norellia-NOAA) and [Molly Stevens](https://github.com/mollystevens-noaa).
+Resources shared by [Eli Holmes](https://github.com/eeholmes), [Jonathan Peake](https://github.com/jonpeake), Josh Lee, and Ed Rogers; authored by [Alex Norelli](https://github.com/norellia-NOAA) and [Molly Stevens](https://github.com/mollystevens-noaa).
 
 ### Disclaimer
 
