@@ -1,6 +1,6 @@
 # NOAA Fisheries Cloud Computing Setup
 
-This repository details cloud computing resources at NOAA Fisheries, with a focus on Google Cloud Workstations for R users.
+This repository details cloud computing resources at NOAA Fisheries, with a focus on Google Cloud Workstations for R users.  Please see the [Openscapes Fall 2025 Cohort's Cloud Clinic](https://gamma.app/docs/Cloud-Clinic-361wjiw6rh2pw2m?mode=doc) for foundational information on cloud data and computing.
 
 ## Why Cloud?
 
