@@ -7,7 +7,7 @@
 # replace "mollystevens-gcwpilot" with your bucket name
 # The `$HOME` symbol is a shortcut for your home directory, so this will
 # create the folder at /home/your_username/my_gcs_bucket.
-BUCKET_NAME="mollystevens-gcwpilot"
+BUCKET_NAME="nmfs-opensci"
 MOUNT_POINT="$HOME/my_gcs_bucket"
 
 # --- Authentication ---
