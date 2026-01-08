@@ -118,7 +118,7 @@ In workstations, a key benefit is being able to start code running and walk away
 
 ## Requesting a Google Data Bucket
 
-Work through local IT to obtain a data bucket. Permissions to read and write to these data buckets can only be done through IT admin access. [Add instructions for each Center here?] Reference [Eli's documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) for additional information on Google shared drive vs data buckets and speed.
+Work through local IT to obtain a data bucket. Permissions to read and write to these data buckets can only be granted through IT admin. Reference existing [documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) for additional information on Google shared drive vs data buckets and relative speed.  Currently, there is no existing link between Google Shared Drive and Google Cloud Workstations.
 
 Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS) for reference as to what these data buckets look like in the web interface. Instructions provided here are for use cases where the user has both read and write access to the data bucket being mounted, but mounting a public database should work similarly (sans write access).
 
