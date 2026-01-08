@@ -73,7 +73,7 @@ When in doubt, you can start with the smallest workstation for additional troubl
 
 ### Linking Workstation to GitHub
 
-The quickest and most persistent method for linking a workstation to a Github Enterprise Account is with a Person Access Token (PAT). This can be done by reading the instructions and executing the code in [R/github_setup.R](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/github_setup.R). Before executing the script you will need to generate a PAT, bellow are relevant PAT documentation (also linked in script):
+The quickest and most persistent method for linking a workstation to a Github Enterprise Account is with a Personal Access Token (PAT). This can be done by reading the instructions and executing the code in [R/github_setup.R](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/github_setup.R). Before executing the script you will need to generate a PAT, bellow are relevant PAT documentation (also linked in script):
 
 1.  [GitHub PAT Settings](https://github.com/settings/tokens)
 2.  [GitHub PAT Tutorial](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
@@ -83,9 +83,10 @@ Workstations will remain linked to GitHub until the PAT expires and persists eve
 
 #### Additional Notes on PATs
 
-[Personal access tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) are less secure. However, some features currently will only work with personal access tokens (classic). Namely, only personal access tokens (classic) have write access for public repositories that are not owned by you or an organization that you are not a member of. If linking to your GitHub repository fails using fine-grained tokens, consider switching to classic tokens.
+[Personal access tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) are less secure. However, classic tokens can be used across multiple repositories and are simpler to setup.  If you are a beginner using PATs, we recommend generating a classic token with only 'repo' access granted in the scope.
 
 PATs should be set to expire in 90 days. 'Configure SSO' needs to be set to 'Authorize' access to your Enterprise organization if applicable, e.g. SEFSC.
+
 
 ### Customizing Your Configuration
 
