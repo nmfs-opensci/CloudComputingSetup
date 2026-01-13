@@ -1,6 +1,6 @@
 # NOAA Fisheries Cloud Computing Setup
 
-This repository details cloud computing resources at NOAA Fisheries, with a focus on Google Cloud Workstations for R users.  Please see the [Openscapes Fall 2025 Cohort's Cloud Clinic](https://gamma.app/docs/Cloud-Clinic-361wjiw6rh2pw2m?mode=doc) for foundational information on cloud data and computing.
+This repository details cloud computing resources at NOAA Fisheries, with a focus on Google Cloud Workstations for R users. Please see the [Openscapes Fall 2025 Cohort's Cloud Clinic](https://gamma.app/docs/Cloud-Clinic-361wjiw6rh2pw2m?mode=doc) for foundational information on cloud data and computing.
 
 ## Why Cloud?
 
@@ -16,18 +16,16 @@ The Google Cloud Workstations are super/uber computers in the cloud, or online, 
 
 Terminology used throughout this tutorial are defined below.
 
-| Term          | Definition |
-| ------------- | ------------- |
-| Workstation   | Pre-configured virtual machines listed under “My Workstations” available on NOAA's Google Cloud. |
-| Configuration | The default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large).  |
-| Session       | An active portion of the workstation, shares storage and power.  It is possible to partition a workstation into multiple sessions with different IDEs and core usage. |
-| Data Bucket   | Cloud-based object storage drive that is optimized for code and external to the workstation. |
-
+| Term | Definition |
+|------------------------------------|------------------------------------|
+| Workstation | Pre-configured virtual machines listed under “My Workstations” available on NOAA's Google Cloud. |
+| Configuration | The default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large). |
+| Session | An active portion of the workstation, shares storage and power. It is possible to partition a workstation into multiple sessions with different IDEs and core usage. |
+| Data Bucket | Cloud-based object storage drive that is optimized for code and external to the workstation. |
 
 ### Requesting a Google Cloud Workstation
 
 The NOAA Fisheries Cloud Program grants access to Google Cloud Workations upon request by filling out the following [form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform).
-
 
 ## Setting up a Google Cloud Workstation
 
@@ -83,10 +81,9 @@ Workstations will remain linked to GitHub until the PAT expires and persists eve
 
 #### Additional Notes on PATs
 
-[Personal access tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) are less secure. However, classic tokens can be used across multiple repositories and are simpler to setup.  If you are a beginner using PATs, we recommend generating a classic token with only 'repo' access granted in the scope.
+[Personal access tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) are less secure. However, classic tokens can be used across multiple repositories and are simpler to setup. If you are a beginner using PATs, we recommend generating a classic token with only 'repo' access granted in the scope.
 
 PATs should be set to expire in 90 days. 'Configure SSO' needs to be set to 'Authorize' access to your Enterprise organization if applicable, e.g. SEFSC.
-
 
 ### Customizing Your Configuration
 
@@ -111,7 +108,7 @@ The Posit configuration is the easiest environment to set-up, whether you are us
 
 ### Cloning Your Workstation
 
-Best Practices for configuring workstations is still in development.  A current strategy for repeated similar runs includes cloning your workstation.  This solution involves an underlying workstation storage cost (cheaper than run times, but still cost inefficient).  Ideally, we would have workstation templates that require minimal additional configurations, avoiding this burden and associated storage cost.  Base workstations for cloning should be utilized short term and should only be stored if you're running repeated similar tasks at the same time.  All workstations (including the base) should be deleted when the task is completed.
+Best Practices for configuring workstations is still in development. A current strategy for repeated similar runs includes cloning your workstation. This solution involves an underlying workstation storage cost (cheaper than run times, but still cost inefficient). Ideally, we would have workstation templates that require minimal additional configurations, avoiding this burden and associated storage cost. Base workstations for cloning should be utilized short term and should only be stored if you're running repeated similar tasks at the same time. All workstations (including the base) should be deleted when the task is completed.
 
 ### Running Code
 
@@ -119,7 +116,7 @@ In workstations, a key benefit is being able to start code running and walk away
 
 ## Requesting a Google Data Bucket
 
-Work through local IT to obtain a data bucket. Permissions to read and write to these data buckets can only be granted through IT admin. Reference existing [documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) for additional information on Google shared drive vs data buckets and relative speed.  Currently, there is no existing link between Google Shared Drive and Google Cloud Workstations.
+Work through local IT to obtain a data bucket. Permissions to read and write to these data buckets can only be granted through IT admin. Reference existing [documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) for additional information on Google shared drive vs data buckets and relative speed. Currently, there is no existing link between Google Shared Drive and Google Cloud Workstations.
 
 Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS) for reference as to what these data buckets look like in the web interface. Instructions provided here are for use cases where the user has both read and write access to the data bucket being mounted, but mounting a public database should work similarly (sans write access).
 
@@ -174,6 +171,16 @@ Writing to buckets works similarly. If the 'data' file above was cleaned on the 
 Best Practices are still under development. Authors are considering options such as defining 'cloud' file paths and 'local' file paths for reading and writing data that are called at the top of the scripts, allowing for minimal edits between programs that are run in the cloud and locally. Alternatively, programs could be written exclusively for cloud computing platforms or local computing.
 
 Suggested ways to set up workflows to easily move between running locally and in the cloud if desired?
+
+### Uploading Data
+
+There are a few options for getting your data onto a workstation we would recommend manually moving the data or mounting a Google Cloud Bucket (see below).  If your data is small enough, you can use the IDE's manual upload methods.  Positron: files can be dragged from your local PC and dropped into the VM environment.  RStudio: The file management panel in the bottom right has data uploading options including uploading entire folders as a .zip and automatically extracting them into the VM directory.  
+
+### Downloading Data
+
+When your run is complete, best practices would be to produce your output reports in the cloud as well, using quarto documents stored on Github.  But if you need to download data from a workstation you can manually download it with the IDE's manual download methods.  Positron: right click on the file and download it, positron will then prompt you to choose the file you want to download it to.  RStudio: press the checkmark box next to a file and press the cog drop down to select download.  This will compress the file and download it as a zip.  
+
+
 
 ## Alternative Options
 
