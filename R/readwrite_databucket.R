@@ -8,15 +8,15 @@
 list.files("~/my_gcs_bucket")
 
 ##List files in the desired folder 
-list.files(path = "~/my_gcs_bucket/mhs")
+list.files(path = "~/my_gcs_bucket/CloudComputingSetup")
 
 ## read in .RData from data bucket
-load('~/my_gcs_bucket/mhs/bsh_agg.RData') 
+load('~/my_gcs_bucket/CloudComputingSetup/bsh_agg.RData') 
 
 ## read in .csv from data bucket
-data <- read.csv("~/my_gcs_bucket/mhs/sampdata.csv")
+data <- read.csv("~/my_gcs_bucket/CloudComputingSetup/sampdata.csv")
 
 ## amend .csv, test write.csv
 library(tidyverse)
 data2 <- data %>% mutate(testvar=1)
-write.csv(data2,"~/my_gcs_bucket/mhs/sampdata2.csv")
+write.csv(data2,"~/my_gcs_bucket/CloudComputingSetup/sampdata3.csv")
