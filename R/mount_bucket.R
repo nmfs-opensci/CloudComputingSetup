@@ -4,7 +4,7 @@
 # authenticate your google account.  
 
 # Define your bucket and the mount point.
-# replace "mollystevens-gcwpilot" with your bucket name
+# replace "nmfs-opensci" with your bucket name
 # The `$HOME` symbol is a shortcut for your home directory, so this will
 # create the folder at /home/your_username/my_gcs_bucket.
 BUCKET_NAME="nmfs-opensci"
