@@ -112,7 +112,7 @@ The Posit configuration is the easiest environment to set-up, whether you are us
 
 There are a few options for getting your data onto a workstation we would recommend manually moving the data or mounting a Google Cloud Bucket (see below). If your data is small enough, you can use the IDE's manual upload methods. Positron: files can be dragged from your local PC and dropped into the VM environment. RStudio: The file management panel in the bottom right has data uploading options including uploading entire folders as a .zip and automatically extracting them into the VM directory.
 
-The main workstation directory that is persistent across sessions is \~/home/user. Your github repositories should be housed here and input data locations will depend on how you've set up your repo.
+The main workstation directory that is persistent across sessions is \~/home/user. Your github repositories should be housed here and input data locations will depend on how you've set up your repository.
 
 ### Cloning Your Workstation
 
@@ -182,15 +182,47 @@ Writing to buckets works similarly. If the 'data' file above was cleaned on the 
 
 `write.csv(data2,"~/my_gcs_bucket/subfolder/sampdata2_clean.csv")`
 
+### Downloading from Buckets
+
+Data can be downloaded to a local machine manually by opening the bucket in a browser, clicking download, and selecting the files you want to download.
+
+If you are moving large amounts of data and need to automate the process, follow these instructions:
+
+1.  You need to install the google cloud CLI plus python on the machine you want to download the data on: <https://cloud.google.com/sdk/docs/install>
+
+2.  Upon installation, the Google Cloud SDK will walk you through authenticating your Google account so it can access any buckets you have access to.
+
+3.  It will prompt you to select a NMFS project.
+
+4.  Use bash code i.e. `cd /d/User/my_name/my_file/` to navigate to the folder where you want the data to go.
+
+5.  Then run with the path to the bucket file you want to download example:
+
+ `gsutil -m cp -r "gs://name_of_bucket/file_within_bucket"`
+
 ### Best Practices
 
 Best Practices are still under development. Authors are considering options such as defining 'cloud' file paths and 'local' file paths for reading and writing data that are called at the top of the scripts, allowing for minimal edits between programs that are run in the cloud and locally. Alternatively, programs could be written exclusively for cloud computing platforms or local computing.
 
 Suggested ways to set up workflows to easily move between running locally and in the cloud if desired?
 
+General Tips:
+
+-   Code should be on Github.
+
+-   Large data should be stored in Google Cloud Buckets.
+
+-   RProjects can be saved as a Github Repositories and automatically set the working directory to the cloned repository on your local machine and workstation.
+
+-   Use .gitignore on your "input" and "output" files but include code in your workstation starter to create "input" and "output" folders in the workstation so you can import your data or mount your bucket to the same location in your working directory every time.
+
+-   Talk to your colleagues to see how they set up their scripts, start to use the same formats, and share github repositories.
+
+-   Google Shared Drives cannot connect to Google Cloud Workstations currently. Any actively used data will need to be moved manually or to a Google Cloud Bucket.
+
 ## Alternative Options
 
-If cloud computing resources are not necessary, alternative options include accessing data in the cloud with local computing resources. With Google Drive for Desktop, data on shared drives can be accessed using G:/ the same as we access shared drives on local computers. Alternatively, if cloud computing workstations have sufficient storage for the programs that you're running, it is not absolutely necessary to link to a data bucket. [Alternate ways to pull data down from the workstation if not a data bucket? Can these also just write to shared drives? Much slower--but wanting to provide options for different workflows].
+If cloud computing resources are not necessary, alternative options include accessing data in the cloud with local computing resources. With Google Drive for Desktop, data on shared drives can be accessed using G:/ the same as we access shared drives on local computers. Alternatively, if cloud computing workstations have sufficient storage for the programs that you're running, it is not absolutely necessary to link to a data bucket.
 
 ## Acknowledgements
 
