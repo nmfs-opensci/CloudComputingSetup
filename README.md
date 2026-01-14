@@ -128,7 +128,7 @@ When your run is complete, best practices would be to produce your output report
 
 **Positron**: right click on the file and download it, positron will then prompt you to choose the file you want to download it to. There will be a moving blue bar above the file explorer that will stop moving when the download is complete.
 
-![](images/Screenshot 2026-01-14 112257.png)
+![](images/posit_download.png){width="326"}
 
 **RStudio**: press the check-mark box next to a file and press the cog drop down to select download. This will compress the file and download it as a zip. This will open a new blank browser while it downloads, when the download is finished the window will close itself and the browser will show the file in your downloads.
 
