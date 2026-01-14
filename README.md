@@ -25,7 +25,7 @@ Terminology used throughout this tutorial are defined below.
 
 ### Requesting a Google Cloud Workstation
 
-The NOAA Fisheries Cloud Program grants access to Google Cloud Workations upon request by filling out the following [form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform).
+The NOAA Fisheries Cloud Program grants access to Google Cloud Workstations upon request by filling out the following [form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform).
 
 ## Setting up a Google Cloud Workstation
 
@@ -39,7 +39,7 @@ As with previous uber computer work, code should be written and troubleshooted l
 
 #### Benchmarking Storage Space
 
-The workstation you select will need enough storage to hold all of your inputs, outputs, and temporary files generated during processing. The NOAA Fisheries Cloud Program provides workstations with 10GB, 50 GB, and 100GB worth of disk space. You must consider if your process will fit within 100 GB before using a workstation.
+The workstation you select will need enough storage to hold all of your inputs, outputs, and temporary files generated during processing. The NOAA Fisheries Cloud Program provides workstations with 10 GB, 50 GB, and 100 GB worth of disk space. You must consider if your process will fit within 100 GB before using a workstation.
 
 Since storage usage scales consistently, you can calculate the total output data by multiplying one unit of output data by however many iterations of code you plan on running. Add that to the total input data, and you know the minimum storage requirements of your process.
 
@@ -89,6 +89,8 @@ PATs should be set to expire in 90 days. 'Configure SSO' needs to be set to 'Aut
 
 Code generally requires a specific computing environment to work properly, this is especially important when treating workstations as temporary machines. Below are some best practices for ensuring your environment is set-up before running your code.
 
+We have provided 2 examples for installing packages. The [easy package install](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/package_install_easy.R) example lists typical install.package() functions with a few specialized lines for installing specific versions of packages. For simple scripts with limited package installations, this is an easy way to maintain scripts for new users. The [intermediate package install](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/package_install_intermediate.R) example has the basic commands required for building, restoring, and maintaining a R:renv environment. This R package saves your R package environment as a renv.lock file which can be stored in github and used to create the same environment on any machine. This method works will if your processes require a lot of packages with specific versions but it can be trickier to get working and maintain. Both examples include the RStudio fix described below and create files for input and output data that can serve as bucket mount points.
+
 #### RStudio
 
 By default the RStudio configuration will attempt to download packages via source code instead of binary through the posit package manager which drastically slows the installation progress down. Before starting any installations use the following code to source binary:
@@ -106,6 +108,10 @@ You must restart the RStudio's R session before you install any packages. This s
 
 The Posit configuration is the easiest environment to set-up, whether you are using the Positron or RStudio IDE. Since Posit uses the posit package manager by default, any packages you install via install.packages() should install quickly and easily. When installing the first package you will be prompted to create a personal folder for the packages to be stored in home/user, you should type "yes" twice and that will ensure that your packages will persist between opening and closing the workstation.
 
+### Uploading Data
+
+There are a few options for getting your data onto a workstation we would recommend manually moving the data or mounting a Google Cloud Bucket (see below). If your data is small enough, you can use the IDE's manual upload methods. Positron: files can be dragged from your local PC and dropped into the VM environment. RStudio: The file management panel in the bottom right has data uploading options including uploading entire folders as a .zip and automatically extracting them into the VM directory.
+
 ### Cloning Your Workstation
 
 Best Practices for configuring workstations is still in development. A current strategy for repeated similar runs includes cloning your workstation. This solution involves an underlying workstation storage cost (cheaper than run times, but still cost inefficient). Ideally, we would have workstation templates that require minimal additional configurations, avoiding this burden and associated storage cost. Base workstations for cloning should be utilized short term and should only be stored if you're running repeated similar tasks at the same time. All workstations (including the base) should be deleted when the task is completed.
@@ -113,6 +119,14 @@ Best Practices for configuring workstations is still in development. A current s
 ### Running Code
 
 In workstations, a key benefit is being able to start code running and walk away until it finishes. You do this by running your code in the Posit Workbench or R Background Jobs. This means you need to build your scripts in such a way that no user interaction is required (i.e. confirmations y/n or authentication). Any authentication or package installation should be done with you actively there, then you can run your totally independent code.
+
+### Downloading Data
+
+When your run is complete, best practices would be to produce your output reports in the cloud as well, using quarto documents stored on Github. But if you need to download data from a workstation you can manually download it with the IDE's manual download methods.
+
+**Positron**: right click on the file and download it, positron will then prompt you to choose the file you want to download it to. There will be a moving blue bar above the file explorer that will stop moving when the download is complete.
+
+**RStudio**: press the check-mark box next to a file and press the cog drop down to select download. This will compress the file and download it as a zip. This will open a new blank browser while it downloads, when the download is finished the window will close itself and the browser will show the file in your downloads.
 
 ## Requesting a Google Data Bucket
 
@@ -171,16 +185,6 @@ Writing to buckets works similarly. If the 'data' file above was cleaned on the 
 Best Practices are still under development. Authors are considering options such as defining 'cloud' file paths and 'local' file paths for reading and writing data that are called at the top of the scripts, allowing for minimal edits between programs that are run in the cloud and locally. Alternatively, programs could be written exclusively for cloud computing platforms or local computing.
 
 Suggested ways to set up workflows to easily move between running locally and in the cloud if desired?
-
-### Uploading Data
-
-There are a few options for getting your data onto a workstation we would recommend manually moving the data or mounting a Google Cloud Bucket (see below).  If your data is small enough, you can use the IDE's manual upload methods.  Positron: files can be dragged from your local PC and dropped into the VM environment.  RStudio: The file management panel in the bottom right has data uploading options including uploading entire folders as a .zip and automatically extracting them into the VM directory.  
-
-### Downloading Data
-
-When your run is complete, best practices would be to produce your output reports in the cloud as well, using quarto documents stored on Github.  But if you need to download data from a workstation you can manually download it with the IDE's manual download methods.  Positron: right click on the file and download it, positron will then prompt you to choose the file you want to download it to.  RStudio: press the checkmark box next to a file and press the cog drop down to select download.  This will compress the file and download it as a zip.  
-
-
 
 ## Alternative Options
 
