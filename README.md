@@ -188,7 +188,7 @@ Data can be downloaded to a local machine manually by opening the bucket in a br
 
 If you are moving large amounts of data and need to automate the process, follow these instructions:
 
-1.  You need to install the google cloud CLI plus python on the machine you want to download the data on: <https://cloud.google.com/sdk/docs/install>
+1.  You need to install the Google cloud CLI plus python on the machine you want to download the data on: <https://cloud.google.com/sdk/docs/install>
 
 2.  Upon installation, the Google Cloud SDK will walk you through authenticating your Google account so it can access any buckets you have access to.
 
@@ -212,7 +212,7 @@ General Tips:
 
 -   Large data should be stored in Google Cloud Buckets.
 
--   RProjects can be saved as a Github Repositories and automatically set the working directory to the cloned repository on your local machine and workstation.
+-   R Projects can be saved as a Github Repositories and automatically set the working directory to the cloned repository on your local machine and workstation.
 
 -   Use .gitignore on your "input" and "output" files but include code in your workstation starter to create "input" and "output" folders in the workstation so you can import your data or mount your bucket to the same location in your working directory every time.
 
