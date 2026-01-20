@@ -136,9 +136,11 @@ When your run is complete, best practices would be to produce your output report
 
 ## Requesting a Google Data Bucket
 
-Work through local IT to obtain a data bucket. Permissions to read and write to these data buckets can only be granted through IT admin. Reference existing [documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) for additional information on Google shared drive vs data buckets and relative speed. Currently, there is no existing link between Google Shared Drive and Google Cloud Workstations.
+Work through local IT to obtain a data bucket **in the us-east4** region. Permissions to read and write to these data buckets can only be granted through IT admin. Reference existing [documentation about servers vs objects](https://nmfs-opensci.github.io/EDMW-EarthData-Workshop-2025/content/why-cloud.html) for additional information on Google shared drive vs data buckets and relative speed. Currently, there is no existing link between Google Shared Drive and Google Cloud Workstations.
 
 Existing public NOAA data buckets can be found [here](https://www.noaa.gov/nodd/datasets#NMFS) for reference as to what these data buckets look like in the web interface. Instructions provided here are for use cases where the user has both read and write access to the data bucket being mounted, but mounting a public database should work similarly (sans write access).
+
+Note, the Google Workstations are in the us-east4 region. It is important that your Google Bucket is in the same region so that there are no data movement changes. If your bucket is not in Google region us-east4, there is a data movement charge both to OCIO and to your local FMC. Your FMC will be charged egress charges for any data that is downloaded to or read into the workstation and OCIO gets charged for data going from the workstation in us-east4 to a bucket in another Google region (not us-east4). Cost is about $0.02/Gb for both ingress and egress. Note this is true for public buckets like NOAA NOAA buckets. You will pay to put data there if you are processing in a virtual machine; you will not pay if you process on your local computer and upload to Google Buckets.
 
 ## Linking Workstation to Bucket
 
