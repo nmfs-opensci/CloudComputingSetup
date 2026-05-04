@@ -1,0 +1,40 @@
+---
+title: "Modernizing your workflows with Google Workstations"
+---
+
+All [NOAA datasets must be uploaded in the cloud by 2026](https://docs.google.com/presentation/d/18cwiB2f2rVlX3RJIsIB0iaD9u2bMdblZCS8RYcrGDd0/edit?slide=id.p1#slide=id.p1), and all on-premises computing resources for NOAA Fisheries are planned to be retired by 2027. Working entirely in the cloud allows scientists to make workflows more efficient, without losing time to downloading/uploading.
+
+A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and incurs long-term storage costs whether it is in use or not. Ultimately, workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers; you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.
+
+## Aims and Objectives of this Workshop
+
+This Google Workstations workshop will consist of two sessions repeated 4 times each:
+
+[Part 1: Intro to Workstations (5/5, 5/7, 5/19, 5/21)]{.underline}
+
+- Intro to working in the cloud and how it's different than working on your computer
+
+- Intro to the workstations available on the pilot program
+
+- Starting up and shutting down a workstation
+
+- Installing packages
+
+- Uploading and downloading files
+
+\
+[Part 2: Connecting Workstations to Code and Data (5/12, 5/14, 5/26, 5/28)]{.underline}
+
+- Setting up your workstation to work with GitHub
+
+- Cloning, pushing and pulling work.
+
+- Intro to cloud storage, why we use cloud storage with cloud compute.
+
+- Setting up your workstation to use a Google Cloud Bucket.
+
+- Practice writing and reading data from a bucket
+
+### Schedule
+
+See the [schedule page](content/schedule.qmd).

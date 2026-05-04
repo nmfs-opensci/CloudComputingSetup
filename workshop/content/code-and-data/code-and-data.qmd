@@ -1,0 +1,24 @@
+---
+title: "Connecting Workstations to Code and Data"
+---
+
+## Aims and Objectives
+
+Most NMFS staff who will be using the Google Workstations platform will be working on analytical workflows involving remote data and code. During this session, we'll be covering the following topics to get you up and running with Google Workstations:
+
+- Setting up your workstation to work with GitHub
+
+- Cloning, pushing and pulling work.
+
+- Intro to cloud storage, why we use cloud storage with cloud compute.
+
+- Setting up your workstation to use a Google Cloud Bucket.
+
+- Practice writing and reading data from a bucket
+
+## Prerequisites: What do I need before this workshop to follow along on my own?
+
+1.  This session is meant for those with a basic understanding of Google Workstations. Check out our [Introduction to Google Workstations](../intro/intro.qmd) lesson if you are new to Google Workstations or need a refresher.
+2.  We'll be working with GitHub, so make sure you have an active GitHub account and that you are logged in.
+
+##

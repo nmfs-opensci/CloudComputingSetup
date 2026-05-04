@@ -1,0 +1,72 @@
+project: 
+  type: website
+  output-dir: docs
+  render:     
+    - "*.qmd"
+    # - "!slides/"
+
+execute:
+  freeze: auto
+
+website:
+  page-navigation: true  
+  title: "NOAA Fisheries GitHub Clinic"
+  favicon: "images/favicon-16x16.png"
+  site-url: https://nmfs-opensci.github.io/GitHub-Clinic
+  repo-url: https://github.com/nmfs-opensci/GitHub-Clinic
+  repo-actions: [edit, issue, source]
+  
+  page-footer: <img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="NMFS Open Science logo" style="width:150px"><br />NMFS Open Science (2023)
+
+  navbar:
+    background: primary
+    search: true
+    right: 
+      - icon: server
+        href: https://nmfs-openscapes.2i2c.cloud/
+        text: "JupyterHub"
+      - icon: wechat
+        href: https://chat.google.com/room/AAAAWt69Hdw?cls=7
+        text: "Discussions"
+      - icon: github
+        href: https://github.com/nmfs-opensci/CloudComputingSetup
+        text: "repo"
+      - icon: globe
+        href: https://github.com/nmfs-opensci
+        text: "GH org"
+  sidebar:
+    logo: https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true
+    pinned: true
+    align: center
+    
+    style: "docked"
+    collapse-level: 1
+    toc-expand: false
+    contents:
+      - section: "Welcome"
+        href: index.qmd
+        contents:
+          - content/schedule.qmd
+          - content/setup/setup.qmd
+          - content/coc.md
+      - section: "Tutorials"
+        contents:
+          - content/intro/intro.qmd
+          - text: "Connecting Workstations to Code and Data"
+      - href: content/resources.qmd
+        text: "Resources"
+      - text: <img width=100px>
+      - text: <img width=100px>
+      - text: <img src="/images/noaa_emblem_logo-2022.png" width=100px>
+        href: https://fisheries.noaa.gov
+format:
+  html:
+    theme:
+      light: brand
+      dark: [cosmo, theme-dark.scss]
+    code-background: true
+    code-copy: true
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    include-before-body: translate.html

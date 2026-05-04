@@ -1,0 +1,21 @@
+# Info for Contributors
+
+## Set and rebuilding GH Pages
+
+```
+remotes::install_deps(dependencies=TRUE, upgrade="always")
+```
+Then Render Website from the Build Tab or run in a terminal
+
+```
+quarto render
+````
+
+## Notice
+
+All contributions (except by the repo owners) must be opened via pull requests on GitHub. Per the GitHub Terms of Use: "Whenever you make a contribution to a repository containing notice of a license, you license your contribution under the same terms, and you agree that you have the right to license your contribution under those terms."
+
+If your contribution is significant and you are not a U.S. Government employee, you are welcome to add your name and copyright date to the NOTICE header. If you are a U.S. Government employee, the U.S. Government retains the copyright. 
+
+U.S. Federal law prevents the Government from accepting gratuitous services unless certain conditions are met. By submitting a pull request, you acknowledge that your services are offered without expectation of payment and that you expressly waive any future pay claims against the U.S. Government related to your contribution.
+
