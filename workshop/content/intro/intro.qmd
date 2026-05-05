@@ -24,16 +24,49 @@ If you have not already requested access to NOAA's Google Cloud Workstations pro
 
 ## Working in the Cloud
 
-<iframe class="slide-deck" src="cloud-slides.html" width="950" height="600">
+<iframe class="slide-deck" src="cloud-slides.html" width="1100" height="650">
 
 </iframe>
 
 ## The NMFS Google Workstations Platform
 
-<iframe class="slide-deck" src="workstations-slides.html" width="950" height="600">
+<iframe class="slide-deck" src="workstations-slides.html" width="1100" height="650">
 
 </iframe>
 
 ## Tutorial: Getting Started on Google Workstations
 
-##
+1.  Go to the Google Workstations Cloud Console: [Cloud Workstations – Google Cloud console](https://console.cloud.google.com/workstations/list?project=ggn-nmfs-wsent-prod-1)
+2.  Click "Create workstation"\
+    ![](images/paste-1.png)
+3.  Fill in the Display Name (typically descriptive of your project) and select your Configuration\
+    ![](images/paste-2.png)
+4.  Click the "Create" button to create your workstation\
+    ![](images/paste-3.png)
+5.  Launch your workstation\
+    ![](images/paste-4.png)
+6.  Your workstation will take a while to spin up; you should see a loading screen while you're waiting\
+    ![](images/paste-5.png)
+7.  Once your workstation has finished starting up, it will automatically open your virtual environment. For the RStudio configuration, you will see a browser-based version of RStudio with all of the typical features. Similarly, for the Jupyter configuration, you will see a browser-based version of Jupyterlab.\
+    ![](images/paste-6.png)
+8.  Let's install some R packages. Run the following code in your console to change the default package repository to the Posit Package Manager. Don't forget to restart your R session to lock in the changes to your Rprofile.
+
+``` R
+repo_line <- 'options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))'
+writeLines(repo_line, "~/.Rprofile")
+# Restart R session to lock in Rprofile changes
+# Session -> Restart R or Ctrl+Shift+F10
+```
+
+9.  Install your favorite package using the standard `install.packages()` command. Make sure your library path is installing in your user Home directory![](images/paste-7.png)
+10. Upload a file using the Upload button in the RStudio files tab\
+    ![](images/paste-9.png)
+11. Now lets download a file. Create a new R Script with the "New File" button, and save it in your Home directory\
+    ![](images/paste-10.png)
+12. In the Files pane, check the box next your file and click the "More" button next with the settings cog icon. Click "Export" to download your file to your local machine.\
+    ![](images/paste-11.png)
+13. If working in the Jupyter configuration, uploading and downloading occurs from the files pane similarly to RStudio.\
+    ![](images/paste-13.png)\
+    ![](images/paste-14.png)
+14. Sometimes you will encounter a screen like this. This can happen when launching a Workstation that loads before the configuration is fully set up. Refreshing the page after a few seconds should clear the error.\
+    ![](images/paste-12.png)

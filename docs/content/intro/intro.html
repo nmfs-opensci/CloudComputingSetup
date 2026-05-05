@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -434,19 +469,50 @@ function googleTranslateElementInit() {
 </section>
 <section id="working-in-the-cloud" class="level2">
 <h2 class="anchored" data-anchor-id="working-in-the-cloud">Working in the Cloud</h2>
-<iframe class="slide-deck" src="cloud-slides.html" width="950" height="600">
+<iframe class="slide-deck" src="cloud-slides.html" width="1100" height="650">
 </iframe>
 </section>
 <section id="the-nmfs-google-workstations-platform" class="level2">
 <h2 class="anchored" data-anchor-id="the-nmfs-google-workstations-platform">The NMFS Google Workstations Platform</h2>
-<iframe class="slide-deck" src="workstations-slides.html" width="950" height="600">
+<iframe class="slide-deck" src="workstations-slides.html" width="1100" height="650">
 </iframe>
 </section>
 <section id="tutorial-getting-started-on-google-workstations" class="level2">
 <h2 class="anchored" data-anchor-id="tutorial-getting-started-on-google-workstations">Tutorial: Getting Started on Google Workstations</h2>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<ol type="1">
+<li>Go to the Google Workstations Cloud Console: <a href="https://console.cloud.google.com/workstations/list?project=ggn-nmfs-wsent-prod-1">Cloud Workstations – Google Cloud console</a></li>
+<li>Click “Create workstation”<br>
+<img src="images/paste-1.png" class="img-fluid"></li>
+<li>Fill in the Display Name (typically descriptive of your project) and select your Configuration<br>
+<img src="images/paste-2.png" class="img-fluid"></li>
+<li>Click the “Create” button to create your workstation<br>
+<img src="images/paste-3.png" class="img-fluid"></li>
+<li>Launch your workstation<br>
+<img src="images/paste-4.png" class="img-fluid"></li>
+<li>Your workstation will take a while to spin up; you should see a loading screen while you’re waiting<br>
+<img src="images/paste-5.png" class="img-fluid"></li>
+<li>Once your workstation has finished starting up, it will automatically open your virtual environment. For the RStudio configuration, you will see a browser-based version of RStudio with all of the typical features. Similarly, for the Jupyter configuration, you will see a browser-based version of Jupyterlab.<br>
+<img src="images/paste-6.png" class="img-fluid"></li>
+<li>Let’s install some R packages. Run the following code in your console to change the default package repository to the Posit Package Manager. Don’t forget to restart your R session to lock in the changes to your Rprofile.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>repo_line <span class="ot">&lt;-</span> <span class="st">'options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(repo_line, <span class="st">"~/.Rprofile"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Restart R session to lock in Rprofile changes</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Session -&gt; Restart R or Ctrl+Shift+F10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="9" type="1">
+<li>Install your favorite package using the standard <code>install.packages()</code> command. Make sure your library path is installing in your user Home directory<img src="images/paste-7.png" class="img-fluid"></li>
+<li>Upload a file using the Upload button in the RStudio files tab<br>
+<img src="images/paste-9.png" class="img-fluid"></li>
+<li>Now lets download a file. Create a new R Script with the “New File” button, and save it in your Home directory<br>
+<img src="images/paste-10.png" class="img-fluid"></li>
+<li>In the Files pane, check the box next your file and click the “More” button next with the settings cog icon. Click “Export” to download your file to your local machine.<br>
+<img src="images/paste-11.png" class="img-fluid"></li>
+<li>If working in the Jupyter configuration, uploading and downloading occurs from the files pane similarly to RStudio.<br>
+<img src="images/paste-13.png" class="img-fluid"><br>
+<img src="images/paste-14.png" class="img-fluid"></li>
+<li>Sometimes you will encounter a screen like this. This can happen when launching a Workstation that loads before the configuration is fully set up. Refreshing the page after a few seconds should clear the error.<br>
+<img src="images/paste-12.png" class="img-fluid"></li>
+</ol>
 
 
 </section>
