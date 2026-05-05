@@ -182,14 +182,14 @@
     "href": "content/intro/cloud-slides.html#what-is-a-virtual-computer",
     "title": "Working in the Cloud",
     "section": "What is a Virtual Computer?",
-    "text": "What is a Virtual Computer?\nA computer that is provisioned for you on remote infrastructure.\nCommon ways that you might work on a virtual computer:\n\nVirtual instance on an on-premises server\nVirtual Machine on a Google Cloud Platform project\nNMFS Openscapes JupyterHub\nColab\nGitHub Codespaces\nGoogle Workstations at NMFS"
+    "text": "What is a Virtual Computer?\nA computer that is provisioned for you on remote infrastructure.\nCommon ways that you might work on a virtual computer:\n\nVirtual instance on an on-premises server\nVirtual Machine on a Google Cloud Platform project\nNMFS Openscapes JupyterHub\nColab\nGitHub Codespaces"
   },
   {
     "objectID": "content/intro/workstations-slides.html#terminology-and-definitions",
     "href": "content/intro/workstations-slides.html#terminology-and-definitions",
     "title": "The NMFS Google Workstations Platform",
     "section": "Terminology and Definitions",
-    "text": "Terminology and Definitions\nTerminology used throughout this tutorial are defined below.\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nWorkstation\nPre-configured virtual machines listed under “My Workstations” available on NOAA’s Google Cloud.\n\n\nConfiguration\nThe default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large).\n\n\nSession\nAn active portion of the workstation, shares storage and power. It is possible to partition a workstation into multiple sessions with different IDEs and core usage.\n\n\nData Bucket\nCloud-based object storage drive that is optimized for code and external to the workstation."
+    "text": "Terminology and Definitions\nTerminology used throughout this tutorial are defined below.\n\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nWorkstation\nPre-configured virtual machines listed under “My Workstations” available on NOAA’s Google Cloud.\n\n\nConfiguration\nThe default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large).\n\n\nSession\nAn active portion of the workstation, shares storage and power. It is possible to partition a workstation into multiple sessions with different IDEs and core usage.\n\n\nData Bucket\nCloud-based object storage drive that is optimized for code and external to the workstation."
   },
   {
     "objectID": "content/intro/workstations-slides.html#workstation-features",
@@ -210,14 +210,14 @@
     "href": "content/intro/workstations-slides.html#workstation-configurationsworkstation-configurations",
     "title": "The NMFS Google Workstations Platform",
     "section": "Workstation ConfigurationsWorkstation Configurations",
-    "text": "Workstation ConfigurationsWorkstation Configurations\n\n\n\n\n\n\n\nWorkstation Type\nRecommended Use Case\n\n\nBase Workstations (base-*)\nAdvanced users who require full control over their computing environment to install and configure custom tools.\n\n\nCode OSS Workstations (oss-*)\nGeneral-purpose coding in Python, R, or other languages; similar to VS Code.\n\n\nPython Workstations (nmfs-jupyter-*)\nFisheries scientists and analysts using Python-based tools such as Jupyter for machine learning and geospatial analysis.\n\n\nR Workstations (nmfs-rstudio-*)\nFisheries scientists and analysts using custom R environments for stock assessments, modeling, and statistical analysis.\n\n\nPosit Workbench Workstations (posit-*)\nUsers working primarily with R and Python in a professional RStudio Pro, VS Code, or Positron environment. Ideal for data scientists and statisticians."
+    "text": "Workstation ConfigurationsWorkstation Configurations\n\n\n\n\n\n\n\n\nWorkstation Type\nRecommended Use Case\n\n\n\n\nBase Workstations\n(base-*)\nAdvanced users who require full control over their computing environment to install and configure custom tools.\n\n\nCode OSS Workstations\n(oss-*)\nGeneral-purpose coding in Python, R, or other languages; similar to VS Code.\n\n\nPython Workstations\n(nmfs-jupyter-*)\nFisheries scientists and analysts using Python-based tools such as Jupyter for machine learning and geospatial analysis.\n\n\nR Workstations\n(nmfs-rstudio-*)\nFisheries scientists and analysts using custom R environments for stock assessments, modeling, and statistical analysis.\n\n\nPosit Workbench Workstations\n(posit-*)\nUsers working primarily with R and Python in a professional RStudio Pro, VS Code, or Positron environment. Ideal for data scientists and statisticians."
   },
   {
     "objectID": "content/intro/workstations-slides.html#workstation-sizes",
     "href": "content/intro/workstations-slides.html#workstation-sizes",
     "title": "The NMFS Google Workstations Platform",
     "section": "Workstation Sizes",
-    "text": "Workstation Sizes\n\n\n\n\n\n\n\n\n\n\nName\nvCPUs\nRAM (GB)\nDisk (GB)\nTypical Workload\n\n\nSmall\n2\n8\n10\nSingle-threaded processing, low memory requirements.\n\n\nMedium\n8\n32\n50\nMid-tier option for heavier data processing and parallel tasks.\n\n\nLarge\n16\n64\n100\nMulti-threaded, memory-intensive workloads and complex modeling."
+    "text": "Workstation Sizes\n\n\n\n\n\n\n\n\n\n\n\nName\nvCPUs\nRAM (GB)\nDisk (GB)\nTypical Workload\n\n\n\n\nSmall\n2\n8\n10\nSingle-threaded processing, low memory requirements.\n\n\nMedium\n8\n32\n50\nMid-tier option for heavier data processing and parallel tasks.\n\n\nLarge\n16\n64\n100\nMulti-threaded, memory-intensive workloads and complex modeling."
   },
   {
     "objectID": "content/intro/workstations-slides.html#which-workstation-is-right-for-me",

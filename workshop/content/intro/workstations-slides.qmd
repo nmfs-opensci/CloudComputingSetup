@@ -20,12 +20,19 @@ format:
 
 Terminology used throughout this tutorial are defined below.
 
-| **Term** | **Definition** |
-|------------|------------------------------------------------------------|
-| Workstation | Pre-configured virtual machines listed under “My Workstations” available on NOAA's Google Cloud. |
-| Configuration | The default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large). |
-| Session | An active portion of the workstation, shares storage and power. It is possible to partition a workstation into multiple sessions with different IDEs and core usage. |
-| Data Bucket | Cloud-based object storage drive that is optimized for code and external to the workstation. |
+::: {style="font-size: smaller;"}
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Term**        | **Definition**                                                                                                                                                       |
++=================+======================================================================================================================================================================+
+| Workstation     | Pre-configured virtual machines listed under “My Workstations” available on NOAA's Google Cloud.                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration   | The default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large).                          |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Session         | An active portion of the workstation, shares storage and power. It is possible to partition a workstation into multiple sessions with different IDEs and core usage. |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Data Bucket     | Cloud-based object storage drive that is optimized for code and external to the workstation.                                                                         |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+:::
 
 ------------------------------------------------------------------------
 
@@ -57,25 +64,43 @@ This tiered structure allows us to offer a valuable baseline service to all user
 
 ## Workstation ConfigurationsWorkstation Configurations
 
-|  |  |
-|----|----|
-| Workstation Type | Recommended Use Case |
-| Base Workstations (base-\*) | Advanced users who require full control over their computing environment to install and configure custom tools. |
-| Code OSS Workstations (oss-\*) | General-purpose coding in Python, R, or other languages; similar to VS Code. |
-| Python Workstations (nmfs-jupyter-\*) | Fisheries scientists and analysts using Python-based tools such as Jupyter for machine learning and geospatial analysis. |
-| R Workstations (nmfs-rstudio-\*) | Fisheries scientists and analysts using custom R environments for stock assessments, modeling, and statistical analysis. |
-| Posit Workbench Workstations (posit-\*) | Users working primarily with R and Python in a professional RStudio Pro, VS Code, or Positron environment. Ideal for data scientists and statisticians. |
+::: {style="font-size: smaller;"}
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Workstation Type              | Recommended Use Case                                                                                                                                    |
++===============================+=========================================================================================================================================================+
+| Base Workstations             | Advanced users who require full control over their computing environment to install and configure custom tools.                                         |
+|                               |                                                                                                                                                         |
+| (base-\*)                     |                                                                                                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Code OSS Workstations         | General-purpose coding in Python, R, or other languages; similar to VS Code.                                                                            |
+|                               |                                                                                                                                                         |
+| (oss-\*)                      |                                                                                                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Python Workstations           | Fisheries scientists and analysts using Python-based tools such as Jupyter for machine learning and geospatial analysis.                                |
+|                               |                                                                                                                                                         |
+| (nmfs-jupyter-\*)             |                                                                                                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| R Workstations                | Fisheries scientists and analysts using custom R environments for stock assessments, modeling, and statistical analysis.                                |
+|                               |                                                                                                                                                         |
+| (nmfs-rstudio-\*)             |                                                                                                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Posit Workbench Workstations  | Users working primarily with R and Python in a professional RStudio Pro, VS Code, or Positron environment. Ideal for data scientists and statisticians. |
+|                               |                                                                                                                                                         |
+| (posit-\*)                    |                                                                                                                                                         |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+:::
 
 ------------------------------------------------------------------------
 
 ## Workstation Sizes
 
-|  |  |  |  |  |
-|----|----|----|----|----|
+::: {style="font-size: smaller;"}
 | Name | vCPUs | RAM (GB) | Disk (GB) | Typical Workload |
+|----|----|----|----|----|
 | Small | 2 | 8 | 10 | Single-threaded processing, low memory requirements. |
 | Medium | 8 | 32 | 50 | Mid-tier option for heavier data processing and parallel tasks. |
 | Large | 16 | 64 | 100 | Multi-threaded, memory-intensive workloads and complex modeling. |
+:::
 
 ------------------------------------------------------------------------
 

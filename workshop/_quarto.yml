@@ -47,7 +47,6 @@ website:
         href: index.qmd
         contents:
           - content/schedule.qmd
-          - content/setup/setup.qmd
           - content/coc.md
       - section: "Tutorials"
         contents:

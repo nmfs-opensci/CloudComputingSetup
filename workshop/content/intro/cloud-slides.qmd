@@ -97,5 +97,3 @@ A computer that is provisioned for you on remote infrastructure.
 - Colab
 
 - GitHub Codespaces
-
-- Google Workstations at NMFS
