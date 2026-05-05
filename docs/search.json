@@ -22,33 +22,11 @@
     ]
   },
   {
-    "objectID": "content/resources.html#tutorials-and-workshops",
-    "href": "content/resources.html#tutorials-and-workshops",
-    "title": "Additional Git and GitHub Resources",
-    "section": "Tutorials and Workshops",
-    "text": "Tutorials and Workshops\n\n2024 GitHub Workshop Notes and Materials - Google Docs (NOAA employees and staff)\nLet’s Git started | Happy Git and GitHub for the useR\nVersion Control with Git: Summary and Setup\nGitHub Governance Team - Training (NOAA employees and staff)\nPractical R+Git Workflow for Scientists May-July 2022\nOpen Scientific Code using Git and GitHub | open-source-workshop\nMicrosoft Git and GitHub Trainings\nGitHub Skills",
-    "crumbs": [
-      "JupyterHub",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "content/resources.html#git-and-github-at-noaa-fisheries",
-    "href": "content/resources.html#git-and-github-at-noaa-fisheries",
-    "title": "Additional Git and GitHub Resources",
-    "section": "Git and GitHub at NOAA Fisheries",
-    "text": "Git and GitHub at NOAA Fisheries\n\nGitHub Governance Team Home Page (NOAA employees and staff)\nNMFS Open Science GitHub Guide\nGitHub Enterprise Cloud Access Guide (NOAA employees and staff)",
-    "crumbs": [
-      "JupyterHub",
-      "Resources"
-    ]
-  },
-  {
-    "objectID": "content/resources.html#cheatsheets-and-reference",
-    "href": "content/resources.html#cheatsheets-and-reference",
-    "title": "Additional Git and GitHub Resources",
-    "section": "Cheatsheets and Reference",
-    "text": "Cheatsheets and Reference\n\nGitHub Git Cheat Sheet - GitHub Cheatsheets\nGitHub Docs\nGit Cheat Sheet - GitHub Education",
+    "objectID": "content/resources.html",
+    "href": "content/resources.html",
+    "title": "Additional Google Workstations Resources",
+    "section": "",
+    "text": "nmfs-opensci/CloudComputingSetup: This repository details cloud computing resources at NOAA Fisheries, with a focus on Google Cloud Workstations for R users.\nFisheries Cloud Compute Accelerator Program Documentation_December 2025 - Google Docs\nGoogle Cloud Workstation FAQs - Google Docs\nRequest a Google Cloud Workstation - Google Form\nCloud Clinic Presentation",
     "crumbs": [
       "JupyterHub",
       "Resources"

@@ -1,37 +1,13 @@
 ---
-title: Additional Git and GitHub Resources
+title: Additional Google Workstations Resources
 ---
 
-## Tutorials and Workshops
+[nmfs-opensci/CloudComputingSetup: This repository details cloud computing resources at NOAA Fisheries, with a focus on Google Cloud Workstations for R users.](https://github.com/nmfs-opensci/CloudComputingSetup)
 
--   [2024 GitHub Workshop Notes and Materials - Google Docs](https://docs.google.com/document/d/1XoOg_qNxZwTjnff7sBDcGrgFerBRa0aV2P5ulYosJ5o/edit?pli=1&tab=t.0) (NOAA employees and staff)
+[Fisheries Cloud Compute Accelerator Program Documentation_December 2025 - Google Docs](https://docs.google.com/document/d/1nziPdPULoRWOYQ9WKzISNUgJvANACvfYpFr1z3Ro2Bc/edit?tab=t.0)
 
--   [Let’s Git started \| Happy Git and GitHub for the useR](https://happygitwithr.com/)
+[Google Cloud Workstation FAQs - Google Docs](https://docs.google.com/document/d/1U1PzGS7G70xsXtD6F6WxkjTSCw7bwNVyZ-YnFyOLOqU/edit?tab=t.0#heading=h.ixzked2xndil)
 
--   [Version Control with Git: Summary and Setup](https://swcarpentry.github.io/git-novice/)
+[Request a Google Cloud Workstation - Google Form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform)
 
--   [GitHub Governance Team - Training](https://sites.google.com/noaa.gov/nmfs-st-github-governance-team/training?authuser=0) (NOAA employees and staff)
-
--   [Practical R+Git Workflow for Scientists May-July 2022](https://rverse-tutorials.github.io/RWorkflow-NWFSC-2022/)
-
--   [Open Scientific Code using Git and GitHub \| open-source-workshop](https://open-source-for-researchers.github.io/open-source-workshop/)
-
--   [Microsoft Git and GitHub Trainings](https://learn.microsoft.com/en-us/training/browse/?products=github)
-
--   [GitHub Skills](https://skills.github.com/)
-
-## Git and GitHub at NOAA Fisheries 
-
--   [GitHub Governance Team Home Page](https://sites.google.com/noaa.gov/nmfs-st-github-governance-team/home?authuser=0) (NOAA employees and staff)
-
--   [NMFS Open Science GitHub Guide](https://nmfs-opensci.github.io/GitHub-Guide/)
-
--   [GitHub Enterprise Cloud Access Guide](https://sites.google.com/noaa.gov/nmfs-st-github-governance-team/github-users?authuser=0) (NOAA employees and staff)
-
-## Cheatsheets and Reference
-
--   [GitHub Git Cheat Sheet - GitHub Cheatsheets](https://training.github.com/downloads/github-git-cheat-sheet/)
-
--   [GitHub Docs](https://docs.github.com/en)
-
--   [Git Cheat Sheet - GitHub Education](https://education.github.com/git-cheat-sheet-education.pdf)
+[Cloud Clinic Presentation](https://gamma.app/docs/Cloud-Clinic-361wjiw6rh2pw2m?mode=doc)
