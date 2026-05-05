@@ -1,0 +1,143 @@
+---
+title: "The NMFS Google Workstations Platform"
+author: "Jonathan Peake"
+brand: ../../slides-light-brand.yml
+format: 
+    nmfs-slides-revealjs: 
+        title-slide-attributes:
+          data-background-image: "styles/horiz-swoop-1.png"
+          data-background-color: '{{< brand color dark-blue >}}'
+        footer: "U.S. Department of Commerce | National Oceanic and Atmospheric Administration | National Marine Fisheries Service"
+        controls: true
+        navigation-mode: linear
+        transition: slide
+        transition-speed: default
+        background-transition: none
+        scrollable: true
+---
+
+## Terminology and Definitions
+
+Terminology used throughout this tutorial are defined below.
+
+| **Term** | **Definition** |
+|------------|------------------------------------------------------------|
+| Workstation | Pre-configured virtual machines listed under “My Workstations” available on NOAA's Google Cloud. |
+| Configuration | The default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large). |
+| Session | An active portion of the workstation, shares storage and power. It is possible to partition a workstation into multiple sessions with different IDEs and core usage. |
+| Data Bucket | Cloud-based object storage drive that is optimized for code and external to the workstation. |
+
+------------------------------------------------------------------------
+
+## Workstation Features
+
+- **Persistent Storage:** Ensures work saved in your home directory is retained across sessions.
+
+- **Web-Based Access:** Enables users to work from any approved device without local installation.
+
+- **Pre-Configured Environments:** Standardizes tool availability (R, Python, etc.) for streamlined development.
+
+- **IAM-Based Security Policies:** Enforces access controls to safeguard resources.
+
+- **Consistent & Replicable Environments:** Provides uniform configurations to enhance reproducibility.
+
+------------------------------------------------------------------------
+
+## The NMFS Google Workstations "Freemium" model
+
+- A comprehensive range of standard workstation configurations are provided at no direct cost to the user or their FMC.
+
+- This service is centrally funded by the OCIO Fisheries Cloud Program and is designed for common data analysis, modeling, and general development workloads.
+
+- This model ensures all users have access to a valuable baseline service without immediate financial constraint.
+
+This tiered structure allows us to offer a valuable baseline service to all users while providing a scalable path for those with more demanding computational needs.
+
+------------------------------------------------------------------------
+
+## Workstation ConfigurationsWorkstation Configurations
+
+|  |  |
+|----|----|
+| Workstation Type | Recommended Use Case |
+| Base Workstations (base-\*) | Advanced users who require full control over their computing environment to install and configure custom tools. |
+| Code OSS Workstations (oss-\*) | General-purpose coding in Python, R, or other languages; similar to VS Code. |
+| Python Workstations (nmfs-jupyter-\*) | Fisheries scientists and analysts using Python-based tools such as Jupyter for machine learning and geospatial analysis. |
+| R Workstations (nmfs-rstudio-\*) | Fisheries scientists and analysts using custom R environments for stock assessments, modeling, and statistical analysis. |
+| Posit Workbench Workstations (posit-\*) | Users working primarily with R and Python in a professional RStudio Pro, VS Code, or Positron environment. Ideal for data scientists and statisticians. |
+
+------------------------------------------------------------------------
+
+## Workstation Sizes
+
+|  |  |  |  |  |
+|----|----|----|----|----|
+| Name | vCPUs | RAM (GB) | Disk (GB) | Typical Workload |
+| Small | 2 | 8 | 10 | Single-threaded processing, low memory requirements. |
+| Medium | 8 | 32 | 50 | Mid-tier option for heavier data processing and parallel tasks. |
+| Large | 16 | 64 | 100 | Multi-threaded, memory-intensive workloads and complex modeling. |
+
+------------------------------------------------------------------------
+
+## Which workstation is right for me? {auto-animate="true"}
+
+Considerations when choosing a workstation configuration and size:
+
+- Are you comfortable on the command line?
+
+- Do you use one coding language over another?
+
+- Do you need specialized libraries or packages?
+
+- Does your code run in parallel?
+
+- Would your code run on your laptop as is?
+
+------------------------------------------------------------------------
+
+## Customizing workstation environments
+
+All NMFS Google Workstations currently run on a Linux base. You can install any packages or libraries that you need for your workflow. You should be comfortable with running basic commands from a Linux-style command line (e.g., bash terminal) if you plan to customize your workstation outside of "typical use"
+
+::: callout-tip
+## Install R packages using pre-compiled binaries, like the Posit Package Manager
+
+Run the following lines in your R console, then restart your R session
+
+``` R
+repo_line <- 'options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))'
+writeLines(repo_line, "~/.Rprofile")
+# Restart R session to lock in Rprofile changes
+# Session -> Restart R or Ctrl+Shift+F10
+```
+:::
+
+------------------------------------------------------------------------
+
+## Customizing workstation environments
+
+::: callout-tip
+## Install R and Python packages at the user level to ensure they persist across sessions
+
+Remember, system directories are ephemeral, but user directories are persistent
+
+``` R
+install.packages("package_name", lib="~/Rlibs")
+```
+
+``` py
+pip install --user package_name
+```
+:::
+
+------------------------------------------------------------------------
+
+## High-Performance and Custom Workstations
+
+You can submit requests for workstations with computing capabilities beyond what we have available through the accelerator program (GPU, high-cost compute). These are handled as independent GCP projects and are subject to FMC cost recovery model.
+
+1.  Submit a specific request to: **Joshua Lee** ([joshua.lee\@noaa.gov](mailto:joshua.lee@noaa.gov)) and **Ed Rodgers** ([ed.rodgers\@noaa.gov](mailto:ed.rodgers@noaa.gov)). 
+
+2.  This request must detail your requirements (machine type, GPU need, estimated usage).
+
+3.  If approved, your FMC's administrative/financial point of contact will be required to provide the corresponding Organization, Project, and Task number to enable direct billing.

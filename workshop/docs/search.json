@@ -1,0 +1,262 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Modernizing your workflows with Google Workstations",
+    "section": "",
+    "text": "All NOAA datasets must be uploaded in the cloud by 2026, and all on-premises computing resources for NOAA Fisheries are planned to be retired by 2027. Working entirely in the cloud allows scientists to make workflows more efficient, without losing time to downloading/uploading.\nA Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and incurs long-term storage costs whether it is in use or not. Ultimately, workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers; you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.",
+    "crumbs": [
+      "JupyterHub",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#aims-and-objectives-of-this-workshop",
+    "href": "index.html#aims-and-objectives-of-this-workshop",
+    "title": "Modernizing your workflows with Google Workstations",
+    "section": "Aims and Objectives of this Workshop",
+    "text": "Aims and Objectives of this Workshop\nThis Google Workstations workshop will consist of two sessions repeated 4 times each:\nPart 1: Intro to Workstations (5/5, 5/7, 5/19, 5/21)\n\nIntro to working in the cloud and how it’s different than working on your computer\nIntro to the workstations available on the NMFS Google Workstations platform\nStarting up and shutting down a workstation\nInstalling packages\nUploading and downloading files\n\n\nPart 2: Connecting Workstations to Code and Data (5/12, 5/14, 5/26, 5/28)\n\nSetting up your workstation to work with GitHub\nCloning, pushing and pulling work.\nIntro to cloud storage, why we use cloud storage with cloud compute.\nSetting up your workstation to use a Google Cloud Bucket.\nPractice writing and reading data from a bucket\n\n\nSchedule\nSee the schedule page.",
+    "crumbs": [
+      "JupyterHub",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "content/resources.html#tutorials-and-workshops",
+    "href": "content/resources.html#tutorials-and-workshops",
+    "title": "Additional Git and GitHub Resources",
+    "section": "Tutorials and Workshops",
+    "text": "Tutorials and Workshops\n\n2024 GitHub Workshop Notes and Materials - Google Docs (NOAA employees and staff)\nLet’s Git started | Happy Git and GitHub for the useR\nVersion Control with Git: Summary and Setup\nGitHub Governance Team - Training (NOAA employees and staff)\nPractical R+Git Workflow for Scientists May-July 2022\nOpen Scientific Code using Git and GitHub | open-source-workshop\nMicrosoft Git and GitHub Trainings\nGitHub Skills",
+    "crumbs": [
+      "JupyterHub",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "content/resources.html#git-and-github-at-noaa-fisheries",
+    "href": "content/resources.html#git-and-github-at-noaa-fisheries",
+    "title": "Additional Git and GitHub Resources",
+    "section": "Git and GitHub at NOAA Fisheries",
+    "text": "Git and GitHub at NOAA Fisheries\n\nGitHub Governance Team Home Page (NOAA employees and staff)\nNMFS Open Science GitHub Guide\nGitHub Enterprise Cloud Access Guide (NOAA employees and staff)",
+    "crumbs": [
+      "JupyterHub",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "content/resources.html#cheatsheets-and-reference",
+    "href": "content/resources.html#cheatsheets-and-reference",
+    "title": "Additional Git and GitHub Resources",
+    "section": "Cheatsheets and Reference",
+    "text": "Cheatsheets and Reference\n\nGitHub Git Cheat Sheet - GitHub Cheatsheets\nGitHub Docs\nGit Cheat Sheet - GitHub Education",
+    "crumbs": [
+      "JupyterHub",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "content/intro/intro.html#aims-and-objectives",
+    "href": "content/intro/intro.html#aims-and-objectives",
+    "title": "Intro to Workstations",
+    "section": "Aims and Objectives",
+    "text": "Aims and Objectives\nAll NOAA datasets must be uploaded in the cloud by 2026, and all on-premises computing resources (meaning high-performance computing) for NOAA Fisheries are planned to be retired by 2027. NOAA Fisheries Cloud Program began a Cloud Compute Accelerator Pilot in early 2025: Enhancing NOAA Fisheries’ Mission with Google Cloud Workstations. Following the conclusion of this Pilot Program, they compiled Frequently Asked Questions for pilot participants and new users. Following a successful pilot phase, the NOAA Fisheries Cloud Compute Accelerator is now transitioning to a fully supported production service for Fiscal Year 2026. This enterprise service provides NOAA Fisheries staff with a pre-configured, secure, and web-accessible cloud-based development environment.\nOur goal is to accelerate development, enhance collaboration, and optimize costs for compute-intensive tasks like stock assessments, ecosystem modeling, and machine learning applications. In conjunction with the Office of the Chief Information Officer and the Office of Science and Technology, NMFS Open Science is providing a training to help onboard new users to the Google Cloud Workstations platform. Today, we’ll be covering the following topics:\n\nIntro to working in the cloud and how it’s different than working on your computer\nIntro to the workstations available through the accelerator program\nStarting up and shutting down a workstation\nInstalling packages\nUploading and downloading files",
+    "crumbs": [
+      "JupyterHub",
+      "Tutorials",
+      "Intro to Workstations"
+    ]
+  },
+  {
+    "objectID": "content/intro/intro.html#prerequisites-what-do-i-need-before-this-workshop-to-follow-along-on-my-own",
+    "href": "content/intro/intro.html#prerequisites-what-do-i-need-before-this-workshop-to-follow-along-on-my-own",
+    "title": "Intro to Workstations",
+    "section": "Prerequisites: What do I need before this workshop to follow along on my own?",
+    "text": "Prerequisites: What do I need before this workshop to follow along on my own?\nIf you have not already requested access to NOAA’s Google Cloud Workstations program, complete this request form to obtain access. You will need to provide your affiliation (e.g., GARFO, NEFSC, PIRO), primary use case (e.g., Data Analysis, Modeling, Machine Learning), and a brief description of your work. The Fisheries Cloud Program team aims to process requests within 24 hours. You will receive an email with next steps once you have been added to the program.",
+    "crumbs": [
+      "JupyterHub",
+      "Tutorials",
+      "Intro to Workstations"
+    ]
+  },
+  {
+    "objectID": "content/intro/intro.html#working-in-the-cloud",
+    "href": "content/intro/intro.html#working-in-the-cloud",
+    "title": "Intro to Workstations",
+    "section": "Working in the Cloud",
+    "text": "Working in the Cloud",
+    "crumbs": [
+      "JupyterHub",
+      "Tutorials",
+      "Intro to Workstations"
+    ]
+  },
+  {
+    "objectID": "content/intro/intro.html#the-nmfs-google-workstations-platform",
+    "href": "content/intro/intro.html#the-nmfs-google-workstations-platform",
+    "title": "Intro to Workstations",
+    "section": "The NMFS Google Workstations Platform",
+    "text": "The NMFS Google Workstations Platform",
+    "crumbs": [
+      "JupyterHub",
+      "Tutorials",
+      "Intro to Workstations"
+    ]
+  },
+  {
+    "objectID": "content/intro/intro.html#tutorial-getting-started-on-google-workstations",
+    "href": "content/intro/intro.html#tutorial-getting-started-on-google-workstations",
+    "title": "Intro to Workstations",
+    "section": "Tutorial: Getting Started on Google Workstations",
+    "text": "Tutorial: Getting Started on Google Workstations",
+    "crumbs": [
+      "JupyterHub",
+      "Tutorials",
+      "Intro to Workstations"
+    ]
+  },
+  {
+    "objectID": "content/code-and-data/code-and-data.html#aims-and-objectives",
+    "href": "content/code-and-data/code-and-data.html#aims-and-objectives",
+    "title": "Connecting Workstations to Code and Data",
+    "section": "Aims and Objectives",
+    "text": "Aims and Objectives\nMost NMFS staff who will be using the Google Workstations platform will be working on analytical workflows involving remote data and code. During this session, we’ll be covering the following topics to get you up and running with Google Workstations:\n\nSetting up your workstation to work with GitHub\nCloning, pushing and pulling work.\nIntro to cloud storage, why we use cloud storage with cloud compute.\nSetting up your workstation to use a Google Cloud Bucket.\nPractice writing and reading data from a bucket"
+  },
+  {
+    "objectID": "content/code-and-data/code-and-data.html#prerequisites-what-do-i-need-before-this-workshop-to-follow-along-on-my-own",
+    "href": "content/code-and-data/code-and-data.html#prerequisites-what-do-i-need-before-this-workshop-to-follow-along-on-my-own",
+    "title": "Connecting Workstations to Code and Data",
+    "section": "Prerequisites: What do I need before this workshop to follow along on my own?",
+    "text": "Prerequisites: What do I need before this workshop to follow along on my own?\n\nThis session is meant for those with a basic understanding of Google Workstations. Check out our Introduction to Google Workstations lesson if you are new to Google Workstations or need a refresher.\nWe’ll be working with GitHub, so make sure you have an active GitHub account and that you are logged in."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "content/intro/cloud-slides.html#what-the-heck-is-the-cloud",
+    "href": "content/intro/cloud-slides.html#what-the-heck-is-the-cloud",
+    "title": "Working in the Cloud",
+    "section": "What the heck is “the cloud”?",
+    "text": "What the heck is “the cloud”?\nAt its core, “The Cloud” represents computing and data services that operate remotely, not directly on your personal device. We already interact with cloud-based data and services, often without realizing it.\n\n\nCloud Data\nWhen you save photos to iCloud or Google Photos instead of your phone’s memory, or stream movies and TV shows from services like Netflix or Hulu, you are utilizing cloud storage and content delivery.\n\nCloud Computing\nCloud computing involves running applications and processing data on remote servers.\nExample: editing Google Docs or playing online games"
+  },
+  {
+    "objectID": "content/intro/cloud-slides.html#why-the-cloud",
+    "href": "content/intro/cloud-slides.html#why-the-cloud",
+    "title": "Working in the Cloud",
+    "section": "Why the Cloud?",
+    "text": "Why the Cloud?\nAll NOAA datasets must be uploaded in the cloud by 2026, and all on-premises computing resources (meaning high-performance computing) for NOAA Fisheries are planned to be retired by 2027."
+  },
+  {
+    "objectID": "content/intro/cloud-slides.html#computing-in-the-cloud",
+    "href": "content/intro/cloud-slides.html#computing-in-the-cloud",
+    "title": "Working in the Cloud",
+    "section": "Computing in the Cloud",
+    "text": "Computing in the Cloud\nNMFS is moving on-premise computing into the cloud, with target of 2027. This is for those who use high-performance computing: long simulations, big data processing, or specialized environments. This doesn’t mean “taking our laptops away”."
+  },
+  {
+    "objectID": "content/intro/cloud-slides.html#why-cloud-computing",
+    "href": "content/intro/cloud-slides.html#why-cloud-computing",
+    "title": "Working in the Cloud",
+    "section": "Why cloud computing?",
+    "text": "Why cloud computing?\nGet the power you need for the task\nOld Way: Analysis limited by single laptop RAM, leading to slow, sequential processing.\nCloud Way: Spin up on-demand compute power for massive datasets and parallel simulations.\nStrategy Shift: Horizontal Scaling. Design “burst” workflows, using 1,000 small processors for instant, cost-effective results."
+  },
+  {
+    "objectID": "content/intro/cloud-slides.html#why-cloud-computing-1",
+    "href": "content/intro/cloud-slides.html#why-cloud-computing-1",
+    "title": "Working in the Cloud",
+    "section": "Why cloud computing?",
+    "text": "Why cloud computing?\nCompute environment is already set-up\nOld Way: Everyone has to install software and make sure all tools work with datasets.\nCloud Way: Shared, “Gold Standard” environments (e.g., Cloud Workstation) for all.\nStrategy Shift: Equity & Efficiency. Eliminate “setup tax,” enabling instant, collaborative analysis for everyone."
+  },
+  {
+    "objectID": "content/intro/cloud-slides.html#why-cloud-computing-2",
+    "href": "content/intro/cloud-slides.html#why-cloud-computing-2",
+    "title": "Working in the Cloud",
+    "section": "Why cloud computing?",
+    "text": "Why cloud computing?\nBig data needs compute ‘next to’ the data\nOld Way: Download massive datasets to local machines for analysis.\nCloud Way: Bring compute (Virtual Machine) directly to data storage in the cloud.\nStrategy Shift: Move Code, Not Data. Essential for efficient analysis of petabyte-scale data archives."
+  },
+  {
+    "objectID": "content/intro/cloud-slides.html#what-is-a-virtual-computer",
+    "href": "content/intro/cloud-slides.html#what-is-a-virtual-computer",
+    "title": "Working in the Cloud",
+    "section": "What is a Virtual Computer?",
+    "text": "What is a Virtual Computer?\nA computer that is provisioned for you on remote infrastructure.\nCommon ways that you might work on a virtual computer:\n\nVirtual instance on an on-premises server\nVirtual Machine on a Google Cloud Platform project\nNMFS Openscapes JupyterHub\nColab\nGitHub Codespaces\nGoogle Workstations at NMFS"
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#terminology-and-definitions",
+    "href": "content/intro/workstations-slides.html#terminology-and-definitions",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "Terminology and Definitions",
+    "text": "Terminology and Definitions\nTerminology used throughout this tutorial are defined below.\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nWorkstation\nPre-configured virtual machines listed under “My Workstations” available on NOAA’s Google Cloud.\n\n\nConfiguration\nThe default settings of the workstation including: type (Base, RStudio, Python, posit), and storage/processing size (small, medium, large).\n\n\nSession\nAn active portion of the workstation, shares storage and power. It is possible to partition a workstation into multiple sessions with different IDEs and core usage.\n\n\nData Bucket\nCloud-based object storage drive that is optimized for code and external to the workstation."
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#workstation-features",
+    "href": "content/intro/workstations-slides.html#workstation-features",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "Workstation Features",
+    "text": "Workstation Features\n\nPersistent Storage: Ensures work saved in your home directory is retained across sessions.\nWeb-Based Access: Enables users to work from any approved device without local installation.\nPre-Configured Environments: Standardizes tool availability (R, Python, etc.) for streamlined development.\nIAM-Based Security Policies: Enforces access controls to safeguard resources.\nConsistent & Replicable Environments: Provides uniform configurations to enhance reproducibility."
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#the-nmfs-google-workstations-freemium-model",
+    "href": "content/intro/workstations-slides.html#the-nmfs-google-workstations-freemium-model",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "The NMFS Google Workstations “Freemium” model",
+    "text": "The NMFS Google Workstations “Freemium” model\n\nA comprehensive range of standard workstation configurations are provided at no direct cost to the user or their FMC.\nThis service is centrally funded by the OCIO Fisheries Cloud Program and is designed for common data analysis, modeling, and general development workloads.\nThis model ensures all users have access to a valuable baseline service without immediate financial constraint.\n\nThis tiered structure allows us to offer a valuable baseline service to all users while providing a scalable path for those with more demanding computational needs."
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#workstation-configurationsworkstation-configurations",
+    "href": "content/intro/workstations-slides.html#workstation-configurationsworkstation-configurations",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "Workstation ConfigurationsWorkstation Configurations",
+    "text": "Workstation ConfigurationsWorkstation Configurations\n\n\n\n\n\n\n\nWorkstation Type\nRecommended Use Case\n\n\nBase Workstations (base-*)\nAdvanced users who require full control over their computing environment to install and configure custom tools.\n\n\nCode OSS Workstations (oss-*)\nGeneral-purpose coding in Python, R, or other languages; similar to VS Code.\n\n\nPython Workstations (nmfs-jupyter-*)\nFisheries scientists and analysts using Python-based tools such as Jupyter for machine learning and geospatial analysis.\n\n\nR Workstations (nmfs-rstudio-*)\nFisheries scientists and analysts using custom R environments for stock assessments, modeling, and statistical analysis.\n\n\nPosit Workbench Workstations (posit-*)\nUsers working primarily with R and Python in a professional RStudio Pro, VS Code, or Positron environment. Ideal for data scientists and statisticians."
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#workstation-sizes",
+    "href": "content/intro/workstations-slides.html#workstation-sizes",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "Workstation Sizes",
+    "text": "Workstation Sizes\n\n\n\n\n\n\n\n\n\n\nName\nvCPUs\nRAM (GB)\nDisk (GB)\nTypical Workload\n\n\nSmall\n2\n8\n10\nSingle-threaded processing, low memory requirements.\n\n\nMedium\n8\n32\n50\nMid-tier option for heavier data processing and parallel tasks.\n\n\nLarge\n16\n64\n100\nMulti-threaded, memory-intensive workloads and complex modeling."
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#which-workstation-is-right-for-me",
+    "href": "content/intro/workstations-slides.html#which-workstation-is-right-for-me",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "Which workstation is right for me?",
+    "text": "Which workstation is right for me?\nConsiderations when choosing a workstation configuration and size:\n\nAre you comfortable on the command line?\nDo you use one coding language over another?\nDo you need specialized libraries or packages?\nDoes your code run in parallel?\nWould your code run on your laptop as is?"
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#customizing-workstation-environments",
+    "href": "content/intro/workstations-slides.html#customizing-workstation-environments",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "Customizing workstation environments",
+    "text": "Customizing workstation environments\nAll NMFS Google Workstations currently run on a Linux base. You can install any packages or libraries that you need for your workflow. You should be comfortable with running basic commands from a Linux-style command line (e.g., bash terminal) if you plan to customize your workstation outside of “typical use”\n\n\n\n\n\n\nInstall R packages using pre-compiled binaries, like the Posit Package Manager\n\n\nRun the following lines in your R console, then restart your R session\nrepo_line &lt;- 'options(repos = c(CRAN = \"https://packagemanager.posit.co/cran/__linux__/jammy/latest\"))'\nwriteLines(repo_line, \"~/.Rprofile\")\n# Restart R session to lock in Rprofile changes\n# Session -&gt; Restart R or Ctrl+Shift+F10"
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#customizing-workstation-environments-1",
+    "href": "content/intro/workstations-slides.html#customizing-workstation-environments-1",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "Customizing workstation environments",
+    "text": "Customizing workstation environments\n\n\n\n\n\n\nInstall R and Python packages at the user level to ensure they persist across sessions\n\n\nRemember, system directories are ephemeral, but user directories are persistent\ninstall.packages(\"package_name\", lib=\"~/Rlibs\")\npip install --user package_name"
+  },
+  {
+    "objectID": "content/intro/workstations-slides.html#high-performance-and-custom-workstations",
+    "href": "content/intro/workstations-slides.html#high-performance-and-custom-workstations",
+    "title": "The NMFS Google Workstations Platform",
+    "section": "High-Performance and Custom Workstations",
+    "text": "High-Performance and Custom Workstations\nYou can submit requests for workstations with computing capabilities beyond what we have available through the accelerator program (GPU, high-cost compute). These are handled as independent GCP projects and are subject to FMC cost recovery model.\n\nSubmit a specific request to: Joshua Lee (joshua.lee@noaa.gov) and Ed Rodgers (ed.rodgers@noaa.gov). \nThis request must detail your requirements (machine type, GPU need, estimated usage).\nIf approved, your FMC’s administrative/financial point of contact will be required to provide the corresponding Organization, Project, and Task number to enable direct billing."
+  },
+  {
+    "objectID": "content/schedule.html",
+    "href": "content/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "This training will be split into two parts held during alternating weeks:\n\nPart 1: Intro to Workstations (5/5, 5/7, 5/19, 5/21)\n\nIntro to working in the cloud and how it’s different than working on your computer\nIntro to the workstations available on the pilot program\nStarting up and shutting down a workstation\nInstalling packages\nUploading and downloading files\n\n\nPart 2: Connecting Workstations to Code and Data (5/12, 5/14, 5/26, 5/28)\n\nSetting up your workstation to work with GitHub\nCloning, pushing and pulling work.\nIntro to cloud storage, why we use cloud storage with cloud compute.\nSetting up your workstation to use a Google Cloud Bucket.\nPractice writing and reading data from a bucket\n\n\nCheck the NMFS Open Science calendar for up-to-date schedules.",
+    "crumbs": [
+      "JupyterHub",
+      "Welcome",
+      "Schedule"
+    ]
+  }
+]

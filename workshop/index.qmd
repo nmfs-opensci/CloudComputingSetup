@@ -14,7 +14,7 @@ This Google Workstations workshop will consist of two sessions repeated 4 times 
 
 - Intro to working in the cloud and how it's different than working on your computer
 
-- Intro to the workstations available on the pilot program
+- Intro to the workstations available on the NMFS Google Workstations platform
 
 - Starting up and shutting down a workstation
 

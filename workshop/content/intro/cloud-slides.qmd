@@ -1,0 +1,101 @@
+---
+title: "Working in the Cloud"
+author: "Jonathan Peake"
+brand: ../../slides-light-brand.yml
+format: 
+    nmfs-slides-revealjs: 
+        title-slide-attributes:
+          data-background-image: "styles/horiz-swoop-1.png"
+          data-background-color: '{{< brand color dark-blue >}}'
+        footer: "U.S. Department of Commerce | National Oceanic and Atmospheric Administration | National Marine Fisheries Service"
+        controls: true
+        navigation-mode: linear
+        transition: slide
+        transition-speed: default
+        background-transition: none
+        scrollable: true
+---
+
+## What the heck is "the cloud"?
+
+At its core, "The Cloud" represents computing and data services that operate remotely, not directly on your personal device. We already interact with cloud-based data and services, often without realizing it.
+
+::::: columns
+::: {.column style="font-size: smaller;"}
+### Cloud Data
+
+When you save photos to iCloud or Google Photos instead of your phone's memory, or stream movies and TV shows from services like Netflix or Hulu, you are utilizing cloud storage and content delivery.
+:::
+
+::: {.column style="font-size: smaller;"}
+### Cloud Computing
+
+Cloud computing involves running applications and processing data on remote servers.
+
+Example: editing Google Docs or playing online games
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Why the Cloud?
+
+All [NOAA datasets must be uploaded in the cloud by 2026](https://docs.google.com/presentation/d/18cwiB2f2rVlX3RJIsIB0iaD9u2bMdblZCS8RYcrGDd0/edit?slide=id.p1#slide=id.p1), and all on-premises computing resources (meaning high-performance computing) for NOAA Fisheries are planned to be retired by 2027.
+
+------------------------------------------------------------------------
+
+## Computing in the Cloud
+
+NMFS is moving on-premise computing into the cloud, with target of 2027. This is for those who use high-performance computing: long simulations, big data processing, or specialized environments. **This doesn't mean "taking our laptops away".**
+
+------------------------------------------------------------------------
+
+## Why cloud computing? {auto-animate="true"}
+
+### Get the power you need for the task
+
+**Old Way:** Analysis limited by single laptop RAM, leading to slow, sequential processing.
+
+**Cloud Way:** Spin up on-demand compute power for massive datasets and parallel simulations.
+
+**Strategy Shift:** Horizontal Scaling. Design "burst" workflows, using 1,000 small processors for instant, cost-effective results.
+
+## Why cloud computing? {auto-animate="true"}
+
+### Compute environment is already set-up
+
+**Old Way:** Everyone has to install software and make sure all tools work with datasets.
+
+**Cloud Way:** Shared, "Gold Standard" environments (e.g., Cloud Workstation) for all.
+
+**Strategy Shift:** Equity & Efficiency. Eliminate "setup tax," enabling instant, collaborative analysis for everyone.
+
+## Why cloud computing? {auto-animate="true"}
+
+### Big data needs compute 'next to' the data
+
+**Old Way:** Download massive datasets to local machines for analysis.
+
+**Cloud Way:** Bring compute (Virtual Machine) directly to data storage in the cloud.
+
+**Strategy Shift:** Move Code, Not Data. Essential for efficient analysis of petabyte-scale data archives.
+
+------------------------------------------------------------------------
+
+## What is a Virtual Computer?
+
+A computer that is provisioned for you on remote infrastructure.
+
+**Common ways that you might work on a virtual computer:**
+
+- Virtual instance on an on-premises server
+
+- Virtual Machine on a Google Cloud Platform project
+
+- NMFS Openscapes JupyterHub
+
+- Colab
+
+- GitHub Codespaces
+
+- Google Workstations at NMFS

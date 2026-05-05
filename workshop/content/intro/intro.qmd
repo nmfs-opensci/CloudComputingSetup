@@ -2,4 +2,38 @@
 title: "Intro to Workstations"
 ---
 
+## Aims and Objectives
+
+All [NOAA datasets must be uploaded in the cloud by 2026](https://docs.google.com/presentation/d/18cwiB2f2rVlX3RJIsIB0iaD9u2bMdblZCS8RYcrGDd0/edit?slide=id.p1#slide=id.p1), and all on-premises computing resources (meaning high-performance computing) for NOAA Fisheries are planned to be retired by 2027. [NOAA Fisheries Cloud Program](https://docs.google.com/document/d/1nziPdPULoRWOYQ9WKzISNUgJvANACvfYpFr1z3Ro2Bc/edit?tab=t.0) began a Cloud Compute Accelerator Pilot in early 2025: [Enhancing NOAA Fisheries’ Mission with Google Cloud Workstations](https://docs.google.com/document/d/1u7R5KjfEDYdwYTvO9kU6EyeHfG7dV9TQizIyCn8seO0/edit?tab=t.0). Following the conclusion of this Pilot Program, they compiled [Frequently Asked Questions](https://docs.google.com/document/d/1U1PzGS7G70xsXtD6F6WxkjTSCw7bwNVyZ-YnFyOLOqU/edit?tab=t.0) for pilot participants and new users. Following a successful pilot phase, the NOAA Fisheries Cloud Compute Accelerator is now transitioning to a fully supported production service for Fiscal Year 2026. This enterprise service provides NOAA Fisheries staff with a pre-configured, secure, and web-accessible cloud-based development environment.
+
+Our goal is to accelerate development, enhance collaboration, and optimize costs for compute-intensive tasks like stock assessments, ecosystem modeling, and machine learning applications. In conjunction with the Office of the Chief Information Officer and the Office of Science and Technology, NMFS Open Science is providing a training to help onboard new users to the Google Cloud Workstations platform. Today, we'll be covering the following topics:
+
+- Intro to working in the cloud and how it's different than working on your computer
+
+- Intro to the workstations available through the accelerator program
+
+- Starting up and shutting down a workstation
+
+- Installing packages
+
+- Uploading and downloading files
+
+## Prerequisites: What do I need before this workshop to follow along on my own?
+
+If you have not already requested access to NOAA's Google Cloud Workstations program, complete [this request form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform?usp=sharing&ouid=112419493802230683932) to obtain access. You will need to provide your affiliation (e.g., GARFO, NEFSC, PIRO), primary use case (e.g., Data Analysis, Modeling, Machine Learning), and a brief description of your work. The Fisheries Cloud Program team aims to process requests within 24 hours. You will receive an email with next steps once you have been added to the program.
+
+## Working in the Cloud
+
+<iframe class="slide-deck" src="cloud-slides.html" width="900" height="600">
+
+</iframe>
+
+## The NMFS Google Workstations Platform
+
+<iframe class="slide-deck" src="workstations-slides.html" width="900" height="600">
+
+</iframe>
+
+## Tutorial: Getting Started on Google Workstations
+
 ##
