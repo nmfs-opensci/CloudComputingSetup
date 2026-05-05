@@ -24,13 +24,13 @@ If you have not already requested access to NOAA's Google Cloud Workstations pro
 
 ## Working in the Cloud
 
-<iframe class="slide-deck" src="cloud-slides.html" width="1000" height="600">
+<iframe class="slide-deck" src="cloud-slides.html" width="950" height="600">
 
 </iframe>
 
 ## The NMFS Google Workstations Platform
 
-<iframe class="slide-deck" src="workstations-slides.html" width="1000" height="600">
+<iframe class="slide-deck" src="workstations-slides.html" width="950" height="600">
 
 </iframe>
 

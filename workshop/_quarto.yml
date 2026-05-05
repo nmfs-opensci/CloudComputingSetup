@@ -1,6 +1,6 @@
 project: 
   type: website
-  output-dir: docs
+  output-dir: ../docs
   render:     
     - "*.qmd"
     # - "!slides/"
@@ -66,6 +66,5 @@ format:
     code-background: true
     code-copy: true
     css: styles.css
-    toc: true
-    toc-depth: 2
+    toc: false
     include-before-body: translate.html
