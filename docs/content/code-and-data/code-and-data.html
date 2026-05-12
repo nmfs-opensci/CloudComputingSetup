@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -432,8 +467,222 @@ function googleTranslateElementInit() {
 <li>We’ll be working with GitHub, so make sure you have an active GitHub account and that you are logged in.</li>
 </ol>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="connecting-github-to-your-workstation" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-github-to-your-workstation">Connecting GitHub to your Workstation</h2>
+<p>Using Git and GitHub is the easiest way to connect your code to your workstation. All workstation configurations include Git as a standard pre-installed software. Not familiar with using Git and GitHub or need a refresher? Check out the NMFS Open Science GitHub Clinic: <a href="https://nmfs-opensci.github.io/GitHub-Clinic/">NOAA Fisheries GitHub Clinic</a>.</p>
+<section id="create-a-personal-access-token-pat-in-github" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-personal-access-token-pat-in-github">Create a Personal Access Token (PAT) in GitHub</h3>
+<ol type="1">
+<li>Open a browser tab and navigate to GitHub. After logging in, select your profile picture in the upper right corner, and click on the Settings cog.<br>
+<img src="images/paste-2.png" class="img-fluid"></li>
+<li>In the menu on the left, select <strong>Developer settings</strong> at the bottom of the menu.<br>
+<img src="images/paste-3.png" class="img-fluid"></li>
+<li>Select the dropdown next to <strong>Personal Access Tokens</strong> and select **Tokens (classic)** <img src="images/paste-4.png" class="img-fluid"></li>
+<li>Generate a new classic token. Give it a name, select the checkbox next to <strong>repo</strong> to give GitHub access to your repositories, and click <strong>Generate token</strong>.<br>
+<img src="images/paste-6.png" class="img-fluid"><br>
+<img src="images/paste-5.png" class="img-fluid"><br>
+<img src="images/paste-7.png" class="img-fluid"></li>
+<li>Copy your token to your keyboard, and save it somewhere handy (e.g., a text file on your local machine). <strong>Make sure you do this before navigating away from the page!</strong> Otherwise you won’t be able to access the token string, and you will need to regenerate the token.<br>
+Note: the token in this tutorial was created specifically for this tutorial and no longer exists; you will need to create your own to access your GitHub account.<br>
+<img src="images/paste-8.png" class="img-fluid"></li>
+<li>If you have repositories hosted in a NMFS GHEC organization, you will need to authorize access to that organization using the <strong>Configure SSO</strong> dropdown. Select the organization you would like to authorize, and proceed to authorize with your CAC (if you haven’t yet logged in to the Enterprise in this GitHub session).<br>
+<img src="images/paste-9.png" class="img-fluid"></li>
+</ol>
+</section>
+<section id="in-rstudio-workstation" class="level3">
+<h3 class="anchored" data-anchor-id="in-rstudio-workstation">In RStudio Workstation</h3>
+<ol type="1">
+<li>Create or launch an RStudio workstation in your Google Cloud Console<br>
+<img src="images/paste-1.png" class="img-fluid"></li>
+<li>In your workstation RStudio console, run the following script to set up Git and connect your GitHub credentials to your workstation. Make sure to replace the USER_NAME, E_MAIL, and TOKEN with your own GitHub login information before you run the script.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Use a script for quicker setup
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Copy this code into an R Script on your workstation, replace the login information, and save the script in your home directory. Run the script from RStudio to automatically set up your Git credentials. You can download the script to your local machine for use in future Workstations</p>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode github_setup.R R code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to connect github to a Google Cloud Workstation</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: Alexandra Norelli</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Go to Github and generate a Personal Access Token (PAT) with the permissions </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># you need:  </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/settings/tokens</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Github tutorial here: </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Github Governaance Team Video tutorial here:  </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># https://drive.google.com/file/d/1tbbw_xXARK689Zj5tm4lVo18aBaXhdKX/view?t=4</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl+f and replace USER_NAME with your username</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl+f and replace E_MAIL with your email address</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl+f and replace TOKEN with your PAT Token</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">'git config --global user.name "USER_NAME"'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">'git config --global user.email "E_MAIL"'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">"git config --list"</span>)  <span class="co">#check that the info is correct</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>cred_line <span class="ot">&lt;-</span> <span class="st">"https://USER_NAME:TOKEN@github.com"</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(cred_line, <span class="st">"~/.git-credentials"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">'git config --global credential.helper store'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="images/paste-10.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Once your credentials are set, you’re ready to clone a GitHub repository. RStudio does this through their Projects interface. In your workstation RStudio session, click the Project dropdown in the upper right corner of your window and select **New project.** <img src="images/paste-11.png" class="img-fluid"></li>
+<li>Select the <strong>Version Control</strong> option, then <strong>Git</strong>.<br>
+<img src="images/paste-12.png" class="img-fluid"><img src="images/paste-14.png" class="img-fluid"></li>
+<li>Enter the URL of the GitHub repository you would like to clone. The directory name will autofill with the name of the repository. You can leave the the project subdirectory as the Home directory (<code>~</code>) or change it to a different folder in your Home directory. Select <strong>Create Project</strong> when you’re ready.<br>
+<img src="images/paste-15.png" class="img-fluid"></li>
+<li>You will see Git running in the background to clone your repository into your workstation. Once it’s finished, the RStudio session will refresh and open the GitHub repository as an R Project (with the repository as the new working directory).<br>
+<img src="images/paste-16.png" class="img-fluid"></li>
+<li>Note that we have a new <code>Git</code> tab in our RStudio pane. From this tab we can access all of the usual Git functions: pulling (syncing) from the remote repository on GitHub, committing new files and modifications to the current repository, pushing (syncing) changes made in the workstation back up to GitHub, and creating branches for collaborative development.<br>
+<img src="images/paste-17.png" class="img-fluid"></li>
+<li>When you create a new file or make changes to an existing file, those changes will show up in the Git pane to commit. Click the checkbox next to the file in the Git pane to stage the changes, then click the <strong>Commit</strong> button to open the Commit interface.<br>
+<img src="images/paste-19.png" class="img-fluid"></li>
+<li>Add a commit message, then click the <strong>Commit</strong> button to commit the changes to your repository.<br>
+<img src="images/paste-20.png" class="img-fluid"></li>
+<li>Push your commit up to GitHub using the <strong>Push</strong> button.<br>
+<img src="images/paste-21.png" class="img-fluid"></li>
+<li>If you’re comfortable with using Git on the command line, all of the Git tools are available through the terminal. You can access the terminal for the underlying Linux operating system using the <strong>Terminal</strong> tab in your RStudio interface:<br>
+<img src="images/paste-22.png" class="img-fluid"></li>
+</ol>
+</section>
+<section id="in-jupyter-workstation" class="level3">
+<h3 class="anchored" data-anchor-id="in-jupyter-workstation">In Jupyter Workstation</h3>
+<p>The JupyterLab workstation configuration allows connection to Git through the terminal; however, the</p>
+<ol type="1">
+<li>Create or launch a Jupyter workstation in your Google Cloud Console<br>
+<img src="images/paste-23.png" class="img-fluid"></li>
+<li>In your workstation Jupyterlab, copy the following code into a Notebook code cell to set up Git and connect your GitHub credentials to your workstation. Make sure to replace the USER_NAME, E_MAIL, and TOKEN with your own GitHub login information before you run the cell. Note that this code won’t work as a standalone python script due to the system calls.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code to connect github to a Google Cloud Workstation</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: Jonathan Peake</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Go to Github and generate a Personal Access Token (PAT) with the permissions </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># you need:  </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># https://github.com/settings/tokens</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Github tutorial here: </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Github Governaance Team Video tutorial here:  </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># https://drive.google.com/file/d/1tbbw_xXARK689Zj5tm4lVo18aBaXhdKX/view?t=4</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl+f and replace USER_NAME with your username</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl+f and replace E_MAIL with your email address</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ctrl+f and replace TOKEN with your PAT Token</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git config <span class="op">--</span><span class="kw">global</span> user.name <span class="st">"USER_NAME"</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git config <span class="op">--</span><span class="kw">global</span> user.email <span class="st">"E_MAIL"</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git config <span class="op">--</span><span class="bu">list</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>cred_line <span class="op">=</span> <span class="st">"https://USER_NAME:TOKEN@github.com"</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">".git-credentials"</span>, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    f.write(cred_line)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">".git-credentials"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(f.read())</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git config <span class="op">--</span><span class="kw">global</span> credential.helper store</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="images/paste-24.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Once your credentials are set, you’re ready to clone a GitHub repository. In JupyterLab, this will happen through the terminal. There is a Git extension for JupyterLab, but this does not appear to work in the Google Workstations implementation of JupyterLab at this time.</li>
+</ol>
+</section>
+</section>
+<section id="cloud-data-in-workstations-google-buckets" class="level2">
+<h2 class="anchored" data-anchor-id="cloud-data-in-workstations-google-buckets">Cloud Data in Workstations: Google Buckets</h2>
+<p>Buckets are the most efficient way to access data in a cloud workstation. Instead of uploading and downloading data to the workstation’s drive, buckets can be used as mountable drives from which you can stream large datasets. Here’s how to set up a Google Data Bucket on a workstation.</p>
+<ol type="1">
+<li>If you don’t have a personal bucket, work through your local IT to obtain one in the <strong>us-east4</strong> region. You’ll need IT to grant permission to read and write to the bucket.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Make sure your bucket is in the us-east4 region.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>NOAA Fisheries’ Google Workstations are housed in the us-east4 region on Google’s servers. To minimize costs, buckets should reside in the same region as your workstation. If the bucket is not in the same region as the workstation, data egress charges will apply.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Buckets need to be mounted <strong>each time</strong> a workstation is started. The bucket will persist until the workstation is turned off. To mount a bucket, copy the following code into a file called “mount_bucket_folder.sh” in the home directory of your workstation (this will work for any of the workstation configurations). Make sure to change the <code>BUCKET_NAME</code> variable with your bucket’s name (this will be assigned when you are given access). The current example uses an example bucket from NMFS OpenSci that is readable by NOAA staff so you can see what this looks like, even if you don’t have your own bucket.</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal code for mounting Google Cloud Buckets to Google Cloud Workstations</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Author: Alexandra Norelli with Gemini assistance for R to BASH translations.  </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the .sh file with the code commented below and follow the instructions to </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># authenticate your google account.  </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Run this script as a .sh file by copying and pasting this code in your bash </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># terminal:  </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#bash mount_bucket_folder.sh</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Define your bucket and the mount point.</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># replace "nmfs-opensci" with your bucket name</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># add the path to folder within the bucket for FOLDER_NAME</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure to put a / at the end of the folder path</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># The `$HOME` symbol is a shortcut for your home directory, so this will</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># create the folder at /home/your_username/my_gcs_bucket.</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="va">BUCKET_NAME</span><span class="op">=</span><span class="st">"nmfs-opensci"</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="va">FOLDER_NAME</span><span class="op">=</span><span class="st">"/"</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="va">MOUNT_POINT</span><span class="op">=</span><span class="st">"</span><span class="va">$HOME</span><span class="st">/my_gcs_bucket"</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Authentication ---</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># This command authenticates your user account with Google Cloud.</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># You'll be prompted to open a browser to complete the login process.</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Running gcloud authentication. Please follow the instructions to log in in your browser."</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth application-default login <span class="at">--no-launch-browser</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Installation and Setup (Run only once) ---</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the mount point if it doesn't exist.</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Since this directory is in your home folder, you don't need `sudo` to create it.</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-d</span> <span class="st">"</span><span class="va">$MOUNT_POINT</span><span class="st">"</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">"</span><span class="va">$MOUNT_POINT</span><span class="st">"</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the Google Cloud GPG key to your system's trusted keys.</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a critical step to verify the authenticity of the packages.</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="kw">|</span> <span class="fu">sudo</span> gpg <span class="at">--dearmor</span> <span class="at">-o</span> /etc/apt/trusted.gpg.d/gcsfuse.gpg</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the GCS FUSE repository to your system's sources list.</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb [signed-by=/etc/apt/trusted.gpg.d/gcsfuse.gpg] https://packages.cloud.google.com/apt gcsfuse-</span><span class="kw">`</span><span class="ex">lsb_release</span> <span class="at">-c</span> <span class="at">-s</span><span class="kw">`</span><span class="st"> main"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/sources.list.d/gcsfuse.list <span class="op">&gt;</span> /dev/null</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the package list to include the new repository.</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Updating package list..."</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Install gcsfuse.</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Installing gcsfuse..."</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> gcsfuse</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Mounting the Bucket ---  you might only need to run this if restarting a workstation</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the gcsfuse tool to mount the bucket to the specified mount point.</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co"># The mount point is in your home directory, so `sudo` is no longer needed.</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Mounting the bucket..."</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="ex">gcsfuse</span> <span class="at">--implicit-dirs</span> <span class="at">--only-dir</span> <span class="st">"</span><span class="va">$FOLDER_NAME</span><span class="st">"</span> <span class="st">"</span><span class="va">$BUCKET_NAME</span><span class="st">"</span> <span class="st">"</span><span class="va">$MOUNT_POINT</span><span class="st">"</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Mounting complete. You can now access the bucket contents at </span><span class="va">$MOUNT_POINT</span><span class="st">"</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co"># Optional: List the contents to verify the mount was successful.</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> <span class="st">"</span><span class="va">$MOUNT_POINT</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Run the file by typing the command <code>bash mount_bucket_folder.sh</code> in your terminal (not your R or Python console) and hitting <code>Enter</code>.<br>
+<img src="images/paste-29.png" class="img-fluid"></li>
+<li>When you hit enter, the bash script will run until it prompts you to authenticate with Google. Open the link and log in with your NOAA Google account.<br>
+<img src="images/paste-30.png" class="img-fluid"></li>
+<li>When you finish logging in, you’ll get an authorization code that you will need to copy and paste into your terminal session. Note that this code only works for this one login instance. Paste your code into the terminal (Hint: to paste into the terminal, you can use the shortcut <code>Ctrl</code>-<code>Shift</code>-<code>V</code> ) and hit <code>Enter</code>.<br>
+<img src="images/paste-32.png" class="img-fluid"><img src="images/paste-33.png" class="img-fluid"></li>
+<li>Once the script has finished running, you should see the bucket and its contents appear in your Home directory. You can now interact with the folder as if it were a drive (for this tutorial, please don’t upload any files or datasets to the nmfs-opensci bucket).<br>
+<img src="images/paste-34.png" class="img-fluid"></li>
+</ol>
 
 
 </section>
