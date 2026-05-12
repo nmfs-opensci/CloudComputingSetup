@@ -51,7 +51,7 @@ website:
       - section: "Tutorials"
         contents:
           - content/intro/intro.qmd
-          - text: "Connecting Workstations to Code and Data"
+          - content/code-and-data/code-and-data.qmd
       - href: content/resources.qmd
         text: "Resources"
       - text: <img width=100px>
