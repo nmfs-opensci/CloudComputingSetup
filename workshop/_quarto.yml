@@ -10,10 +10,10 @@ execute:
 
 website:
   page-navigation: true  
-  title: "NOAA Fisheries GitHub Clinic"
+  title: "NOAA Fisheries Google Cloud Workstations Workshop"
   favicon: "images/favicon-16x16.png"
-  site-url: https://nmfs-opensci.github.io/GitHub-Clinic
-  repo-url: https://github.com/nmfs-opensci/GitHub-Clinic
+  site-url: https://nmfs-opensci.github.io/CloudComputingSetup/
+  repo-url: https://github.com/nmfs-opensci/CloudComputingSetup
   repo-actions: [edit, issue, source]
   
   page-footer: <img src="https://github.com/nmfs-opensci/assets/blob/main/logo/nmfs-opensci-logo2.png?raw=true" alt="NMFS Open Science logo" style="width:150px"><br />NMFS Open Science (2023)

@@ -1,1 +1,1 @@
-Sitemap: https://nmfs-opensci.github.io/GitHub-Clinic/sitemap.xml
+Sitemap: https://nmfs-opensci.github.io/CloudComputingSetup/sitemap.xml
