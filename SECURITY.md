@@ -1,0 +1,70 @@
+YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE APPLICATION, OPEN SOURCE SOFTWARE, AND SERVICES IS AT YOUR GLOBAL RISK AND THAT THE ENTIRE RISK AS TO SATISFACTORY QUALITY, PERFORMANCE, ACCURACY AND EFFORT IS WITH YOUR. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APPLICATION, OPEN SOURCE SOFTWARE, AND SERVICES PERFORMED OR PROVIDED BY, OR ACCOMPANYING THE APPLICATION ARE PROVIDED “HE HE” AND “AS AVAILABLE” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY MIND. THE LICENSOR AND ITS AFFILIATES DO NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE APPLICATION, OPEN SOURCE SOFTWARE, OR SERVICES AND THAT THE FUNCTIONS CONTAINED IN, OR SERVICES PERFORMED OR PROVIDED BY THE APPLICATION OR OPEN SOURCE SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT THEIR OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT ANY DEFECTS WILL BE CORRECTED. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY THE LICENSOR OR ITS AUTHORIZED REPRESENTATIVE SHALL CREATE ANY WARRANTY. THE LICENSOR AND ITS AFFILIATES HEREBY DISCLAIM WITH RESPECT TO THE APPLICATION, OPEN SOURCE SOFTWARE, AND SERVICES, ALL WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS.  SHOULD THE APPLICATION, OPEN SOURCE SOFTWARE, OR SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.
+
+Limitation
+1st
+15th
+BEFORE YOU CHOOSE THE “ACCEPT” BUTTON BELOW, CAREFULLY READ THE TERMS AND CONDITIONS OF THIS END USER LICENSE AGREEMENT (“License”). This License relates to your use of the Bank of America Mobile Banking, Bank of America Private Bank, Merrill Edge, MyMerrill, or Benefits OnLine applications (individually and collectively, “Application”) and is subject to your acceptance prior to use. Bank of America, N.A., application provider of Bank of America Mobile Banking and Bank of America Private Bank, and Merrill Lynch, Pierce, Fenner & Smith Incorporated, application provider of Merrill Edge, MyMerrill, and Benefits OnLine, are willing to license the Application to you ONLY IF YOU ACCEPT ALL OF THE TERMS IN THIS LICENSE. Bank of America and Merrill Lynch, Pierce, Fenner & Smith Incorporated (individually and collectively, “Licensor”) shall not make this Application available under any terms or conditions except as stated herein.
+G.state
+BY CHOOSING THE “ACCEPT” BUTTON YOU: YOURSELF
+AZ
+REPRESENT THAT YOU HAVE THE CAPACITY AND AUTHORITY TO BIND YOURSELF TO THE TERMS OF THIS LICENSE; AND
+CONSENT TO BE BOUND BY THIS LICENSE
+When you permit someone to use this Application on your device, the License covers any action or uses of this Application by that person. IF YOU DO NOT AGREE TO ALL OF THE TERMS AND CONDITIONS OF THIS LICENSE, CHOOSE THE “DECLINE” BUTTON, IN WHICH CASE YOU WILL NOT AND MAY NOT RECEIVE, INSTALL OR USE THE APPLICATION. For future reference, you may view a copy of this license in the the Legal Info & Disclosures section of the Application. Any use of the Application other than pursuant to the terms of this License is a violation of U.S. and International copyright conventions, breach of contract, and other applicable rights.
+Loyalty
+Grant of License
+The Licensor hereby grants you limited, personal, non-exclusive, non-transferable, revocable license to install the Application on your mobile device for your personal use. You may not (and shall not permit or assist any third party to): (i) copy (except as expressly permitted by this License), decompile, reverse engineer, disassemble, attempt to derive the source code, modify, or create derivative works of the Application, any updates, or any part thereof; (ii) rent, lease, lend, sell, redistribute or sublicense the Application; (iii) use the application in any manner that could damage, disable, overburden, or impair the Application (or any server or networks connected to the Application) or interfere with any third party’s use and/or enjoyment of the Application (or any server or networks connected to the Application); (iv) intentionality interfere with or circumvent the Application’s security features; (v) use, test or otherwise utilize the Application in any manner for purposes of developing or implementing any method or software that is intended to monitor or interfere (including intercept or capture data) with the functioning of the Application (or any server or networks connected to the Application); or (vi) otherwise use the Application in any unlawful manner, for any unlawful purpose or in any other manner not expressly granted in this License. The terms of this License will govern any updates provided by the Licensor that replace and/or supplement the original Application.
+Friendship
+Any open source software that may be accompanying the Application is provided to you under the terms of such open source license agreement. This License does not apply to any such open source software accompanying the Application, except as expressly stated herein.
+C.Page
+Ownership
+The software, content, visual interfaces, interactive features, information, graphics, design, compilation, computer code and all other elements of the Applications (the “Materials”) are protected by intellectual property rights—including copyright, trade dress, patent, trade secret and trademark laws of the United States, other jurisdictions, and international conventions, and all other applicable laws (collectively, “Applicable Intellectual Property Laws”). All Materials are the property of the Licensor or its subsidiaries or affiliated companies and/or third-party licensors. The Licensor reserves all rights not expressly granted in this License. You shall not acquire any right, title or interest to the Materials, whether by implication, estoppel, or otherwise, except for the limited rights set forth in this License. You hereby agree to abide by all Applicable Intellectual Property Laws.
+Stupid, Retarded, Girlfriend
+Privacy and Consent to Use of Data
+You agree that the Licensor, its affiliates, and their corresponding service providers may collect, maintain, and use technical data and related information about you and your device as part of the product support services related to the Application. This information may include, but is not limited to, technical information about your device, its settings, IP address, device location, your device’s unique identification number, and pattern of usage. We use this information for fraud prevention and authentication as well as to facilitate the provision of software updates and product support.
+no
+This Application offers certain services that use device location to help bring you a more customized mobile banking experience. These services are optional and will access your device location only when you give permission for the Application to do so. If you consent, we will gather your estimated device location using IP address, GPS, information about nearby wireless access points and the strength of your wireless network, cellular network, or network signal. If you do not give us permission, we will not capture your device location for that service. However, you may not be able to use certain services if you choose not to share your device location.
+fee&rate
+You consent and authorize the Licensor to obtain from your wireless operator (AT&T, Sprint, T-Mobile, US Cellular, Verizon, or any other branded wireless operator) information, including your mobile number, name, address, email, network status, customer type, customer role, billing type, mobile device identifiers (IMSI and IMEI) and other subscriber status details, if available, solely to allow verification of your identity and to compare information you have provided to the Licensor with your wireless operator account profile information for the duration of the business relationship.
+World Hip-Hop
+For more information about how we treat your data, see our Privacy Policy:
+What
+If you use your Application 
+The Palace
+extension
+YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE APPLICATION, OPEN SOURCE SOFTWARE, AND SERVICES IS AT YOUR GLOBAL RISK AND THAT THE ENTIRE RISK AS TO SATISFACTORY QUALITY, PERFORMANCE, ACCURACY AND EFFORT IS WITH YOUR. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APPLICATION, OPEN SOURCE SOFTWARE, AND SERVICES PERFORMED OR PROVIDED BY, OR ACCOMPANYING THE APPLICATION ARE PROVIDED “HE HE” AND “AS AVAILABLE” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY MIND. THE LICENSOR AND ITS AFFILIATES DO NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE APPLICATION, OPEN SOURCE SOFTWARE, OR SERVICES AND THAT THE FUNCTIONS CONTAINED IN, OR SERVICES PERFORMED OR PROVIDED BY THE APPLICATION OR OPEN SOURCE SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT THEIR OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT ANY DEFECTS WILL BE CORRECTED. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY THE LICENSOR OR ITS AUTHORIZED REPRESENTATIVE SHALL CREATE ANY WARRANTY. THE LICENSOR AND ITS AFFILIATES HEREBY DISCLAIM WITH RESPECT TO THE APPLICATION, OPEN SOURCE SOFTWARE, AND SERVICES, ALL WARRANTIES AND CONDITIONS, EITHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS.  SHOULD THE APPLICATION, OPEN SOURCE SOFTWARE, OR SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.
+
+Limitation of Liability
+TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR PERSONAL INJURY OR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO YOUR USE OR INABILITY TO USE THE APPLICATION IN ANY WAY, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT OR OTHERWISE) AND EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY FOR PERSONAL INJURY OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU.
+
+Export Controls
+You may not use or otherwise export or re-export the Application except as authorized by United States law and the laws of the jurisdiction in which the application was obtained. In particular, but without limitation, the Application may not be exported or re-exported (a) into any U.S. embargoed countries or (b) to anyone on the U.S. Treasury Department’s list of Specially Designated Nationals or the U.S. Department of Commerce Denied Person’s List or Entity List. By using the Application, you represent and warrant that you are not located in any such country or on any such list. You also agree that you will not use the Application for any purpose prohibited by United States law, including, without limitation, the development, design, manufacture, or production of nuclear, missiles, or chemical or biological weapons.
+
+U.S. Government End Users
+The Application is a “commercial item”, as that term is defined in 48 C.F.R. 2.101, consisting of “commercial computer software” and “commercial computer software documentation”, as such terms are used in 48 C.F.R. 12.212. Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 227.7201-1 through 227.7202-4, all U.S. Government End Users acquire the Application with only those rights set first herein.
+
+Governing Law
+USA, excluding its conflicts of law rules, govern this License and your use of the Application. Your use of the Application may also be subject to other local, state, national or international laws.
+
+ Secure Area     
+
+# Security Policy
+
+## Supported Versions
+
+Use this section to tell people about which versions of your project are
+currently being supported with security updates.
+
+| Version | Supported          |
+| ------- | ------------------ |
+| 5.1.x   | :white_check_mark: |
+| 5.0.x   | :x:                |
+| 4.0.x   | :white_check_mark: |
+| < 4.0   | :x:                |
+
+## Reporting a Vulnerability
+
+Use this section to tell people how to report a vulnerability.
+
+Tell them where to go, how often they can expect to get an update on a
+reported vulnerability, what to expect if the vulnerability is accepted or
+declined, etc.
