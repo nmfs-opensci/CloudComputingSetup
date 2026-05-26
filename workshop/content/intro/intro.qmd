@@ -20,7 +20,7 @@ Our goal is to accelerate development, enhance collaboration, and optimize costs
 
 ## Prerequisites: What do I need before this workshop to follow along on my own?
 
-If you have not already requested access to NOAA's Google Cloud Workstations program, complete [this request form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform?usp=sharing&ouid=112419493802230683932) to obtain access. You will need to provide your affiliation (e.g., GARFO, NEFSC, PIRO), primary use case (e.g., Data Analysis, Modeling, Machine Learning), and a brief description of your work. The Fisheries Cloud Program team aims to process requests within 24 hours. You will receive an email with next steps once you have been added to the program.
+If you have not already requested access to NOAA's Google Cloud Workstations program, complete [this request form](https://apps-st.fisheries.noaa.gov/jira/servicedesk/customer/portal/14) to obtain access. You will need to provide your affiliation (e.g., GARFO, NEFSC, PIRO), primary use case (e.g., Data Analysis, Modeling, Machine Learning), and a brief description of your work. The Fisheries Cloud Program team aims to process requests within 24 hours. You will receive an email with next steps once you have been added to the program.
 
 ## Working in the Cloud
 
@@ -51,7 +51,7 @@ If you have not already requested access to NOAA's Google Cloud Workstations pro
     ![](images/paste-6.png)
 8.  Let's install some R packages. Run the following code in your console to change the default package repository to the Posit Package Manager. Don't forget to restart your R session to lock in the changes to your Rprofile.
 
-``` R
+``` r
 repo_line <- 'options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))'
 writeLines(repo_line, "~/.Rprofile")
 # Restart R session to lock in Rprofile changes
