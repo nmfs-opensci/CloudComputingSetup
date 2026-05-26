@@ -25,7 +25,7 @@ Terminology used throughout this tutorial are defined below.
 
 ### Requesting a Google Cloud Workstation
 
-The NOAA Fisheries Cloud Program grants access to Google Cloud Workstations upon request by filling out the following [form](https://docs.google.com/forms/d/e/1FAIpQLSc-RSmPhLV7kBuiiuAzxb2LvWG7Q6XrNbQCbhJZtvaVVtOVZQ/viewform).
+The NOAA Fisheries Cloud Program grants access to Google Cloud Workstations upon request by filling out the following [form](https://apps-st.fisheries.noaa.gov/jira/servicedesk/customer/portal/14).
 
 ## Setting up a Google Cloud Workstation
 
