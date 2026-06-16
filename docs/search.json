@@ -93,6 +93,41 @@
     ]
   },
   {
+    "objectID": "content/drive-and-buckets/drive-and-buckets.html#aims-and-objectives",
+    "href": "content/drive-and-buckets/drive-and-buckets.html#aims-and-objectives",
+    "title": "Accessing Google Drive from Workstations",
+    "section": "Aims and Objectives",
+    "text": "Aims and Objectives\nMany NMFS staff who will be using the Google Workstations platform require access to files and directories hosted on NOAA’s Google Drive. During this session, we’ll be covering the following topics to get you up and running with Google Workstations:\n\nConnecting workstations to Google Drive using RClone\nDirect access to Google Drive files and folders in R using the googledrive package"
+  },
+  {
+    "objectID": "content/drive-and-buckets/drive-and-buckets.html#prerequisites-what-do-i-need-before-this-workshop-to-follow-along-on-my-own",
+    "href": "content/drive-and-buckets/drive-and-buckets.html#prerequisites-what-do-i-need-before-this-workshop-to-follow-along-on-my-own",
+    "title": "Accessing Google Drive from Workstations",
+    "section": "Prerequisites: What do I need before this workshop to follow along on my own?",
+    "text": "Prerequisites: What do I need before this workshop to follow along on my own?\n\nThis session is meant for those with a basic understanding of Google Workstations. Check out our Introduction to Google Workstations lesson if you are new to Google Workstations or need a refresher.\nWe will be working on the command line, so familiarity with command line tools and operations will be helpful for this workshop."
+  },
+  {
+    "objectID": "content/drive-and-buckets/drive-and-buckets.html#connecting-to-google-drive-using-rclone",
+    "href": "content/drive-and-buckets/drive-and-buckets.html#connecting-to-google-drive-using-rclone",
+    "title": "Accessing Google Drive from Workstations",
+    "section": "Connecting to Google Drive using RClone",
+    "text": "Connecting to Google Drive using RClone\nRClone is an application that provides a mountable folder of your Google Drive (and other cloud storage services) in your working directory, similar to the Google Drive for Desktop application available for Windows and Mac machines. However, unlike the Google Drive for Desktop application, RClone works in a Linux operating system, and thus will work on the Linux-based Google Workstations. Use the following steps to install and configure RClone. Note that this will work from the terminal of any of the current Workstation configurations, but for demonstration purposes I will use the RStudio workstation here.\n\nCreate or launch an RStudio workstation in your Google Cloud Console\n\nIn your workstation RStudio terminal, run the following script to set up RClone. This will start a configuration process in the terminal. After every prompt, be sure to hit Enter after you enter the appropriate response.\nsudo apt update\n# NOTE:\n# The command below installs an older version of rclone,\n# which does NOT provide the config_token option later.\nsudo apt install fuse3 rclone\n# Install the latest version of rclone\nsudo curl https://rclone.org/install.sh | sudo bash\nmkdir ~/gdrive\nrclone config\n\nWhen prompted, enter Y to finish installing the proper packages, then n to make a New remote. Next, enter the name of gdrive .\n\n\nIn the next prompt for Storage, enter 24 and hit enter.\n\nLeave the client_id and client_secret prompts blank (just enter through them). Enter 1 for scope to grant full read-write permissions to your Google Drive.\n\nEnter through the service_account_file step without entering a value, and enter n when prompted to Edit advanced config?. Also enter n when prompted to use auto config.\n\nHere is where things get a little tricky. You will also need to have the same version of RClone installed on your local machine. To do this on a Mac or a Windows machine, go to Rclone downloads and download the current version for your operating system. Extract the resulting zip file to a dedicated folder, then open a terminal in that folder.\n\nOnce you have a terminal open on your local machine, copy the line of code from your workstation into your local terminal and proceed with authorizing through the browser.\n\n\nCopy the resulting string of characters from your local terminal into your remote terminal where it says config_token.\n\n\nBack in your workstation terminal, select n when prompted to configure as a Shared Drive. Finally, select q to quit the configuration steps.\n\n\nNow that your workstation RClone is configured, the last thing you’ll need to do is mount your drive folder. Run the following script to mount the drive to the gdrive folder:\n\nrclone mount gdrive: ~/gdrive --vfs-cache-mode writes --daemon --dir-cache-time 72h --vfs-cache-max-age 1h --log-level INFO\n\nNow when you click in your gdrive folder in RStudio, you should see all of your files and folders from your NOAA Google Drive."
+  },
+  {
+    "objectID": "content/drive-and-buckets/drive-and-buckets.html#access-google-drive-files-and-folders-in-r-using-the-googledrive-package",
+    "href": "content/drive-and-buckets/drive-and-buckets.html#access-google-drive-files-and-folders-in-r-using-the-googledrive-package",
+    "title": "Accessing Google Drive from Workstations",
+    "section": "Access Google Drive files and folders in R using the googledrive package",
+    "text": "Access Google Drive files and folders in R using the googledrive package\nThe previous steps allow you to browse your files in a folder like you would any other folder. But if you need to access files directly through an R script without needing access to all of your files on your Google Drive, the R googledrive package is an easier way to load data files directly from your Google Drive into an R environment.\n\nIn an RStudio session, install the googledrive package using install.packages(\"googledrive\"). This is a Tidyverse package that will also install if you run install.packages(\"tidyverse\"). Note: remember to change your repository to Posit Package Manager, which uses precompiled binaries to speed things up.\n\nRun the following script to configure the googledrive package to work with your Google account. Replace “my.email@noaa.gov” with your NOAA email. Select 1 to cache your credentials so you don’t have to login in the future. This will open a login page where you will authorize your account.\nlibrary(googledrive) \nlibrary(gargle)  \ndrive_auth(token = credentials_user_oauth2(   \n    scopes = \"https://www.googleapis.com/auth/drive\",\n    email = \"my.email@noaa.gov\"))  \n\n\nCopy the resulting character string to your clipboard, then paste it into your RStudio console.\n\nTo test that everything was set up correctly, run drive_find(n=10) in your RStudio console. If everything was configured correctly, this should list the first 10 files/directories in your google drive."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "content/code-and-data/code-and-data.html#aims-and-objectives",
     "href": "content/code-and-data/code-and-data.html#aims-and-objectives",
     "title": "Connecting Workstations to Code and Data",
@@ -139,13 +174,6 @@
       "Tutorials",
       "Connecting Workstations to Code and Data"
     ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   },
   {
     "objectID": "content/intro/cloud-slides.html#what-the-heck-is-the-cloud",
