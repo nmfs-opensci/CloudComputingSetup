@@ -52,6 +52,7 @@ website:
         contents:
           - content/intro/intro.qmd
           - content/code-and-data/code-and-data.qmd
+          - content/drive-and-buckets/drive-and-buckets.qmd
       - href: https://drive.google.com/open?id=1p-J_lWQEXE6IuZxFBoxI0NlvW-UcZXHI&usp=drive_fs
         text: "Session Recordings (NOAA Staff Only)"
       - href: content/resources.qmd
