@@ -1,8 +1,10 @@
-# Bucket access demo from an R Workstation
+# GCS Bucket access demo from Google Cloud Workstation (RStudio or Positron)
 
-This guide explains how to use [R/bucket_access.R](../R/bucket_access.R) to test read and write access from a Google Cloud Workstation to a Google Cloud Storage bucket, including a bucket that lives in a different GCP project.
+This guide explains [R/bucket_access.R](R/bucket_access.R) as a demonstration for
+read and write access from a Google Cloud Workstation to a Google Cloud Storage Bucket,
+including a bucket that lives in a different GCP project.
 
-## What this demo does
+## What the demo script does
 
 The script is intentionally small. It demonstrates four steps:
 
@@ -11,7 +13,8 @@ The script is intentionally small. It demonstrates four steps:
 3. upload a small example CSV file to the bucket, and
 4. download that file back into R.
 
-This is a useful smoke test when you want to verify that a workstation can interact with a bucket before building a larger workflow.
+This is simple test process to verify that a workstation can interact with a bucket.
+Users can use this as a starting point for implementing their own workflows.
 
 ## What you need before running it
 
@@ -30,6 +33,11 @@ install.packages(c("googleCloudStorageR", "gargle", "readr"))
 
 ## One-time authentication setup
 
+The recommended best practice for authentication is to use Application Default
+Credentials (ADC). This creates a persistent authentication on the workstation
+after a one-time process. The `gcloud` CLI application is installed by default
+on all Google Workstations
+
 From the workstation terminal, run:
 
 ```bash
@@ -45,11 +53,12 @@ This starts a manual browser-based flow. In practice, the steps are:
 5. copy the returned code, and
 6. paste it back into the workstation terminal.
 
-This creates Application Default Credentials that R can use through `gargle::token_fetch()`.
+This creates Application Default Credentials that R can use
+through `gargle::token_fetch()`.
 
 ## How to configure the script
 
-Open [R/bucket_access.R](../R/bucket_access.R) and update this value:
+Open [R/bucket_access.R](R/bucket_access.R) and update this value:
 
 ```r
 bucket_name <- "your-bucket-name"
@@ -112,5 +121,3 @@ For production code, it is usually worth adapting this demo in three ways:
 1. move `bucket_name` and object paths into a small config section,
 2. add explicit error handling and messages around authentication and uploads, and
 3. avoid broad scopes when a narrower scope will do.
-
-If you want a more reusable version, a natural next step is to turn this into a small helper function or parameterized script.
