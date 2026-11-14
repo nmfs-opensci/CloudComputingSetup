@@ -6,7 +6,9 @@ This repository details cloud computing resources at NOAA Fisheries, with a focu
 
 All [NOAA datasets must be uploaded in the cloud by 2026](https://docs.google.com/presentation/d/18cwiB2f2rVlX3RJIsIB0iaD9u2bMdblZCS8RYcrGDd0/edit?slide=id.p1#slide=id.p1), and all on-premises computing resources for NOAA Fisheries are planned to be retired by 2027. Working entirely in the cloud allows scientists to make workflows more efficient, without losing time to downloading/uploading. With the transition timeline away from existing resources, we have compiled documentation here to share and allow scientists who previously worked on uber computers to adapt their workflows more quickly.
 
-The Google Cloud Workstations are super/uber computers in the cloud, or online, instead of physically housed at a NMFS facility. When running code that might take hours or days, a workstation can do the job while you retain full functionality of your local PC. Any work that previously required the uber computers or multiple PCs should be transitioned to the cloud.
+Google Cloud Workstations act as "uber" computers in the cloud rather than physical machines housed at a NMFS facility. They can be configured and scaled to project-specific needs with massive computational resources (e.g., 16+ vCPUs, 64+ GB RAM) that go far beyond standard laptop capabilities. Any work that previously required uber computers or multiple PCs—such as compute-intensive stock assessments (e.g., WHAM, sdmTMB), spatial movement models, and large simulations—can run for hours or days on a workstation while you retain full functionality of your local PC.
+
+Beyond raw computing power, workstations allow you to work securely from any approved computer without installing heavy analytical software or compilers locally. They also ensure that all team members run the exact same operating system (Ubuntu Linux) and core C/C++ build tools, eliminating environment mismatches across collaborators.
 
 ## NOAA Fisheries Cloud Program
 
@@ -27,6 +29,14 @@ Terminology used throughout this tutorial are defined below.
 
 The NOAA Fisheries Cloud Program grants access to Google Cloud Workstations upon request by filling out the following [form](https://apps-st.fisheries.noaa.gov/jira/servicedesk/customer/portal/14).
 
+When completing the request form:
+* **Affiliation:** Select your Science Center or Regional Office (e.g., SWFSC, NEFSC, GARFO, PIRO).
+* **Larger Testing Group:** Indicate your cohort if applicable (e.g., *NMFS Open Science Community / Openscapes*).
+* **Workstation Type Requested:** Select the environment that matches your workflow (e.g., **Posit Workbench Workstations**, **R Workstations**, or **Python**).
+* **Primary Use Case:** Select *Modeling, simulations, and other compute-intensive tasks* and briefly describe your project needs (e.g., WHAM modeling, sardine assessment).
+
+Requests are typically processed within **24 hours**.
+
 ## Setting up a Google Cloud Workstation
 
 A Google Cloud Workstation is a virtual machine (VM) that can be customized to mimic any computing environment. The VM is hosted in the cloud and incurs long-term storage costs whether it is in use or not. Ultimately, workstations are designed to be spun up, used, and deleted regularly. Think of workstations as disposable computers, you should strive to get the perfect fit for your purpose, use it, then discard it, with your entire process immortalized on GitHub and your inputs/outputs persisting on cloud storage.
@@ -34,6 +44,12 @@ A Google Cloud Workstation is a virtual machine (VM) that can be customized to m
 ### Selecting the right size workstation
 
 The IDE or program you use to run your code will decide which workstation type you choose (Base, Code OSS, Python, R, Posit Workbench). This section focuses on which size you should choose. High resource users, please see [Fisheries Cloud Program Section 4.0 High-Performance and Custom Workstations (FMC-Funded Option)](https://docs.google.com/document/d/1nziPdPULoRWOYQ9WKzISNUgJvANACvfYpFr1z3Ro2Bc/edit?tab=t.0#heading=h.65j2qoyirqa8): "The enterprise offering is designed to cover standard analytical needs. If your work requires high-cost, specialized resources, such as GPUs, larger machine types (beyond Large), or custom-developed images for specific program workflows, these resources are available, and treated as independent GCP projects, and billed according to the annual GCP cost recovery process."
+
+Standard enterprise workstation configurations include:
+
+- **Small:** 2 vCPU, 8 GB RAM
+- **Medium:** 8 vCPU, 32 GB RAM
+- **Large:** 16 vCPU, 64 GB RAM
 
 As with previous uber computer work, code should be written and troubleshooted locally before being executed in a workstation. During the troubleshooting process, you should get an idea of what storage and processing requirements you may have via benchmarking. For many processes, a workstation does not need to be a perfect fit, but below are some simple methods for benchmarking your work to better understand which size workstation you should select.
 
@@ -65,9 +81,39 @@ The processing power required for a process is more complex than storage space b
 
 When in doubt, you can start with the smallest workstation for additional troubleshooting and upgrade as needed.
 
+### Creating and Launching Your Workstation
+
+Once your access ticket is approved, create your workstation in the Google Cloud Console:
+
+1. Log into the Google Cloud Console (link provided in welcome email).
+2. In the top search bar, search for and select **Workstations**.
+3. Click *Create Workstation* and configure your settings:
+   - *Name (ID Field):* **DO NOT modify the auto-generated ID field.** Changing this can cause provisioning or permission errors.
+   - *Display Name:* Enter a recognizable name for your project (e.g., `Sardine-Assessment-WS`).
+   - *Configuration:* Select your desired workstation type and machine size (Small, Medium, or Large).
+4. Click *Create*. Once provisioning finishes, click **Start**, and then click **Launch** to open your IDE (such as RStudio or Posit Workbench) in your browser.
+
+::: {.callout-important title="Mandatory Administrative Rule (OCIO Policy)"}
+Users should **NOT** modify the **ID** field when creating a workstation—it is used for administrative tracking and billing. You may modify the **Display Name** to follow your preferred naming convention. OCIO periodically reviews workstation IDs and deletes any that do not conform to the default ID naming convention.
+:::
+   
 ## Using a Workstation
 
 **BACK UP YOUR WORK** and use the cloud workstations to run existing scripts, not to develop code. Hourly compute costs are incurred when the workstation has been "Started", so ensure that each workstation is "Stopped" when runs are complete and the computing session is no longer in use. Be aware that these workstations automatically delete after 6 months of no use to avoid long term storage costs. The optimal workflow for a workstation is to have a GitHub repository with all the necessary code to run your process. Thus, the first step when opening a workstation should be connecting to GitHub.
+
+### Storage Realities: Persistent vs. Ephemeral
+
+Understanding how cloud storage is structured is vital to preventing data loss:
+
+| Storage Category | Target Directory | Storage Lifetime | Key Usage & Policies |
+| :--- | :--- | :--- | :--- |
+| **Persistent Storage** | `/home/user/` | **For life of workstation** | Your personal home directory. All scripts, Git repositories, settings (`~/.Renviron`, `~/.git-credentials`), and user R package libraries saved here survive VM reboots and session restarts. |
+| **Ephemeral Storage** | `/usr/`, `/etc/`, `/tmp/` | **Temporary** | The container's root system paths. Any modifications made outside `/home/user/` are wiped whenever administrators recreate or update the workstation container image. |
+| **Isolated Instances** | Container Disk | **Isolated** | Each user operates inside their own isolated VM. You **cannot** mount or cross-share local hard drive paths directly between user containers. Team sharing relies on GitHub and `renv`. |
+
+### Permission Boundaries
+
+As a workstation user, you have administrative (`sudo`) privileges **inside your assigned container shell**, allowing you to install Linux operating system libraries and headers. However, you **do not** have access to the central Google Cloud infrastructure, underlying Dockerfiles, or Docker daemons managed by NOAA OCIO.
 
 ### Linking Workstation to GitHub
 
@@ -93,7 +139,16 @@ We have provided 2 examples for installing packages. The [easy package install](
 
 #### RStudio
 
-By default the RStudio configuration will attempt to download packages via source code instead of binary through the posit package manager which drastically slows the installation progress down. Before starting any installations use the following code to source binary:
+By default the RStudio configuration will attempt to download packages via source code instead of binary through the posit package manager which drastically slows the installation progress down. When configuring your environment in RStudio, you will switch between two primary tabs in the lower-left panel:
+
+| Tab Name | Prompt Symbol | Primary Purpose | Example Tasks |
+| :--- | :---: | :--- | :--- |
+| **R Console** | `>` | Runs interactive R code and scripts | Executing models, inspecting objects, running `pak` or `renv::restore()` |
+| **Bash Terminal** | `$` | Runs Linux operating system commands | Installing OS packages (`sudo apt-get`), file management, `git` operations |
+
+##### Configuring Binary Package Downloads
+
+Before starting any installations, in the **R Console** (`>`), run the following code to source pre-compiled Ubuntu Linux binaries:
 
 ```{r}
 repo_line <- 'options(repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/jammy/latest"))'
@@ -101,18 +156,300 @@ writeLines(repo_line, "~/.Rprofile")
 # Restart R session to lock in Rprofile changes
 # Session -> Restart R or Ctrl+Shift+F10
 ```
-
 You must restart the RStudio's R session before you install any packages. This should allow your workstation to install packages just as fast as a Posit configuration.
+
+##### Configuring Persistent R Library Paths
+
+Unlike the Posit configuration—which prompts you to create a personal package directory on first install—RStudio users should verify that package installations target their persistent home directory (`/home/user/`) so libraries survive workstation restarts.
+
+In the R Console (`>`), inspect your current library search paths:
+
+```{r}
+.libPaths()
+```
+If a user path under `/home/user/R/x86_64-pc-linux-gnu-library/` (e.g., .../4.6) is missing, create it and register it in `~/.Renviron` via the Bash **Terminal** tab (`$`):
+
+Then restart your R session (Session -> Restart R) and re-run `.libPaths()` to confirm the persistent directory appears first.
+
+##### Sanitizing the System *Renviron* File
+
+In certain workstation container images, system environment variables (such as `DOCKER_OPTS` or `HOSTNAME`) can get appended to the system-level Renviron file, causing syntax errors in subshell calls like `R CMD INSTALL`.
+
+Run the following commands in the Bash **Terminal** tab (`$`):
+
+```{bash}
+# Truncate /usr/lib/R/etc/Renviron at the standard terminal delimiter
+sudo sed -i -n '1,/### End: \*\*\*/p' /usr/lib/R/etc/Renviron
+
+# Verify the file ends cleanly
+tail -n 8 /usr/lib/R/etc/Renviron
+
+# Verify R's compiler toolchain
+R CMD config
+```
 
 #### Posit
 
 The Posit configuration is the easiest environment to set-up, whether you are using the Positron or RStudio IDE. Since Posit uses the posit package manager by default, any packages you install via install.packages() should install quickly and easily. When installing the first package you will be prompted to create a personal folder for the packages to be stored in home/user, you should type "yes" twice and that will ensure that your packages will persist between opening and closing the workstation.
 
-### Uploading Data
+#### Installing OS-Level System Dependencies (Why `install.packages()` Fails)
 
-There are a few options for getting your data onto a workstation we would recommend manually moving the data or mounting a Google Cloud Bucket (see below). If your data is small enough, you can use the IDE's manual upload methods. Positron: files can be dragged from your local PC and dropped into the VM environment. RStudio: The file management panel in the bottom right has data uploading options including uploading entire folders as a .zip and automatically extracting them into the VM directory.
+Unlike Windows or macOS, Ubuntu Linux does not bundle external C/C++ libraries inside R packages. Analytical and data-wrangling packages such as `sf`, `terra`, `stars`, `ncdf4`, `sdmTMB`, `wham`, and `tidyverse` rely on underlying Linux system libraries (`GDAL`, `GEOS`, `PROJ`, `NetCDF`, `HDF5`, `UDUNITS`, `cURL`, `OpenSSL`, and `libxml2`).
 
-The main workstation directory that is persistent across sessions is \~/home/user. Your github repositories should be housed here and input data locations will depend on how you've set up your repository.
+Running `install.packages()` directly for these packages often fails with compilation errors for two reasons:
+
+1. **System directory location:** Compiled C/C++ binaries and header files must live in root system folders (`/usr/include` and `/usr/lib`), outside your `/home/user/` directory.
+2. **Permission boundaries:** R's `install.packages()` can only write to R library folders—it cannot modify system directories or invoke Linux's package manager.
+
+Before installing packages in R, install these core OS-level headers in the **Bash Terminal** tab (`$`) using superuser (`sudo`) privileges:
+
+```{bash}
+sudo apt-get update && sudo apt-get install -y \
+  libudunits2-dev \
+  libgdal-dev \
+  libgeos-dev \
+  libproj-dev \
+  libnetcdf-dev \
+  libhdf5-dev \
+  libcurl4-openssl-dev \
+  libssl-dev \
+  libxml2-dev
+
+# Verify system compilers are recognized
+gdal-config --version
+nc-config --version
+```
+
+#### Fast Package Management with `pak`
+
+While `install.packages()` works for simple scripts, `pak` is recommended for complex analytical workflows on cloud workstations because it:
+
+1. *Resolves dependencies in parallel:* Downloads and installs packages concurrently, drastically reducing setup time.
+2. *Avoids partial/broken installs:* Solves the entire dependency tree before installing anything, preventing version conflicts mid-install.
+3. *Unifies CRAN and GitHub installations:* Handles pre-compiled Ubuntu Linux binaries from Posit Public Package Manager (PPM) alongside GitHub-hosted models (such as `wham`) in a single workflow.
+
+In the **R Console** (`>`), install `pak`, point R to Posit Package Manager binaries, and batch-install your analytical stack:
+
+```{r}
+# 1. Install pak
+install.packages("pak", repos = "[https://cloud.r-project.org](https://cloud.r-project.org)")
+
+# 2. Point R to pre-compiled Ubuntu Linux binaries on Posit Package Manager
+options(repos = c(CRAN = "[https://packagemanager.posit.co/cran/__linux__/jammy/latest](https://packagemanager.posit.co/cran/__linux__/jammy/latest)"))
+
+# 3. Batch install CRAN packages (replace with your project's packages)
+pkgs <- c(
+  "fs", "ncdf4", "s2", "units", "terra", "sass", "bslib",
+  "sf", "gargle", "rmarkdown", "stars", "googledrive",
+  "reprex", "googlesheets4", "fmesher", "sdmTMB", "tidyverse"
+)
+pak::pkg_install(pkgs)
+
+# 4. Install GitHub-hosted packages (e.g., WHAM or Stock Synthesis r4ss)
+github_pkgs <- c("timjmiller/wham", "r4ss/r4ss")
+pak::pkg_install(github_pkgs)
+```
+
+Verify that your spatial and modeling libraries load cleanly:
+
+```{r}
+# Load libraries (replace with your project's packages)
+library(ncdf4)
+library(sf)
+library(terra)
+library(sdmTMB)
+library(wham)
+```
+#### Known Package Conflicts on Cloud Workstations
+
+When combining spatial, stock assessment, and ´tidyverse´ packages on Ubuntu Linux, watch out for these common issues:
+
+´tidyverse´ (´xml2´, ´curl´, ´httr´) and ncdf4 compilation failures: Even meta-packages like ´tidyverse´ fail during source builds if ´libxml2-dev´, ´libcurl4-openssl-dev´, or ´libssl-dev´ are missing, while ´ncdf4´ requires ´libnetcdf-dev´ and ´libhdf5-dev´. Installing the OS headers above prevents these errors, and using pak automatically pulls pre-compiled Linux binaries when available.
+
+Matrix and TMB-based packages (´sdmTMB´, ´wham´, ´glmmTMB´): If ´Matrix´ or ´TMB´ is updated independently, downstream modeling packages may fail with C++ ABI or SuiteSparse mismatch errors. Fix this by reinstalling the affected modeling package (´pak::pkg_install("sdmTMB", upgrade = TRUE)´) or restoring a pinned ´renv.lock´ file.
+
+GitHub package dependencies (´r4ss´, ´wham´): Stock assessment packages hosted on GitHub often depend on specific CRAN versions or suggest packages that fail if installed sequentially. Installing them via ´pak::pkg_install("r4ss/r4ss")´ resolves both CRAN and GitHub dependencies in a single pass.
+
+Function namespace masking: Loading modeling and spatial libraries alongside ´tidyverse´ commonly masks core functions—most notably ´MASS::select()´ masking ´dplyr::select()´, and ´terra::extract()´ masking ´tidyr::extract()´. Use explicit namespace prefixes (e.g., ´dplyr::select()´) in shared scripts.
+
+#### Troubleshooting Package Installations
+
+If an installation times out or fails to compile, residual lock files or incomplete folders can block subsequent package installations.
+
+##### 1. Missing OS Header Libraries
+
+If compilation fails with `configuration failed for package 'X'` or `header file not found`, check the error message for the missing Linux library name (e.g., `libxml-2.0` or `openssl`), and install the corresponding `-dev` package in the **Bash Terminal** tab (`$`):
+
+```{bash}
+sudo apt-get update && sudo apt-get install -y libxml2-dev libssl-dev
+```
+
+Then retry the installation in the **R Console** (`>`):
+
+```{r}
+pak::pkg_install("package_name")
+```
+
+##### 2. Remove Stale Lock Files (`00LOCK`)
+
+If an interrupted installation leaves behind a lock directory, clear it in the **Bash Terminal** tab (`$`) (adjust the R version number if needed):
+
+```{bash}
+rm -rf /home/user/R/x86_64-pc-linux-gnu-library/4.6/00LOCK*
+```
+
+##### 3. Clean Incomplete Package Builds
+
+Run this diagnostic script in the **R Console** (`>`) to identify and delete corrupted package folders missing a valid `DESCRIPTION` file:
+
+```{r}
+lib <- "/home/user/R/x86_64-pc-linux-gnu-library/4.6"
+dirs <- list.dirs(lib, full.names = TRUE, recursive = FALSE)
+
+# Identify folders missing DESCRIPTION metadata
+broken <- dirs[!file.exists(file.path(dirs, "DESCRIPTION"))]
+
+if (length(broken) > 0) {
+  unlink(broken, recursive = TRUE)
+  message("Removed incomplete package folders: ", paste(basename(broken), collapse = ", "))
+} else {
+  message("No broken package folders found.")
+}
+```
+#### Environment Replication with `renv`
+
+Rather than relying on costly VM cloning to replicate setups across machines or collaborators, use **`renv`** alongside GitHub to lock and share exact R package versions without version drift. *(For a starter script template, see [R/package_install_intermediate.R](https://github.com/nmfs-opensci/CloudComputingSetup/blob/main/R/package_install_intermediate.R]).*
+
+| Workflow Phase | Responsible Party | Primary Command / Action | Output Artifact |
+| :--- | :--- | :--- | :--- |
+| 1. Initialize Tracking | Lead Developer | `renv::init(bare = TRUE)` | `.Rprofile`, `renv/activate.R` |
+| 2. Snapshot Dependencies | Lead Developer | `renv::snapshot(type = "all")` | `renv.lock` JSON file |
+| 3. Push Blueprint | Lead Developer | `git push origin main` | Pushed repository with lockfile |
+| 4. Mirror Environment | Collaborators | `renv::restore()` | Reconstructed persistent library |
+
+##### 1. Initialize `renv` and Take a Snapshot
+
+In the **R Console** (`>`):
+
+```{r}
+# 1. Install renv if missing
+if (!requireNamespace("renv", quietly = TRUE)) {
+  install.packages("renv", repos = "[https://cloud.r-project.org](https://cloud.r-project.org)")
+}
+
+# 2. Initialize project tracking
+renv::init(bare = TRUE)
+
+# 3. Snapshot current package environment to the lockfile
+renv::snapshot(type = "all")
+```
+
+##### 2. Configure `.gitignore` and Push the Lockfile
+
+Verify .gitignore in the Bash **`Terminal`** tab ($) to ensure large binary library folders are excluded from Git tracking:
+
+```{bash}
+cat .gitignore
+```
+
+Confirm that your `.gitignore` includes:
+```{Plaintext}
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/local/
+renv/staging/
+```
+
+Commit and push the lockfile and project settings in the Bash **`Terminal`** tab (`$`):
+
+```{bash}
+git add .Rprofile renv.lock renv/activate.R renv/settings.json .gitignore
+git commit -m "Initialize renv package dependency lockfile"
+git push
+```
+
+##### 3. Robust Project Setup & Fallback Script
+
+For scripts that need to run across team workstations regardless of whether `renv::restore()` encounters network glitches or binary mismatches, include this initialization pattern at the top of your analysis scripts (customize `required_cran` and `required_github` for your project):
+
+```{r}
+# Setup & Dependency Configuration
+
+# 1. Attempt environment restoration via renv lockfile
+restore_successful <- tryCatch({
+  message("Restoring packages via renv lockfile...")
+  renv::restore(prompt = FALSE)
+  TRUE
+}, error = function(e) {
+  warning("renv::restore() failed or is out of sync. Falling back to pak...")
+  FALSE
+})
+
+# 2. Fallback installer: Run only if renv::restore failed or packages are missing
+# Replace with your project's CRAN and GitHub packages
+required_cran   <- c("tidyverse", "here", "ncdf4", "sf")
+required_github <- c("timjmiller/wham", "r4ss/r4ss") # Set to character(0) if none needed
+
+missing_cran     <- required_cran[!sapply(required_cran, requireNamespace, quietly = TRUE)]
+github_pkg_names <- basename(required_github)
+missing_github   <- required_github[!sapply(github_pkg_names, requireNamespace, quietly = TRUE)]
+
+if (length(missing_cran) > 0 || length(missing_github) > 0) {
+  # Point R to pre-compiled Ubuntu Linux binaries on Posit Package Manager
+  options(repos = c(CRAN = "[https://packagemanager.posit.co/cran/__linux__/jammy/latest](https://packagemanager.posit.co/cran/__linux__/jammy/latest)"))
+
+  if (!requireNamespace("pak", quietly = TRUE)) {
+    message("Installing pak...")
+    install.packages("pak", repos = "[https://cloud.r-project.org](https://cloud.r-project.org)")
+  }
+
+  if (length(missing_cran) > 0) {
+    message("Installing missing CRAN packages: ", paste(missing_cran, collapse = ", "))
+    pak::pkg_install(missing_cran)
+  }
+
+  if (length(missing_github) > 0) {
+    message("Installing missing GitHub packages: ", paste(missing_github, collapse = ", "))
+    pak::pkg_install(missing_github)
+  }
+}
+
+message("All dependencies verified!")
+```
+# 3. Load libraries safely
+
+```{r}
+library(YourPackageHere)
+```
+
+##### 4. Teammate Quickstart: Mirroring the Environment
+
+Collaborators joining an existing project can replicate the complete analytical environment in three steps:
+
+1. Install OS system headers in the Bash **`Terminal`** tab (`$`):
+
+```{bash}
+sudo apt-get update && sudo apt-get install -y \
+  libudunits2-dev libgdal-dev libgeos-dev libproj-dev libnetcdf-dev
+```
+
+Clone the project in RStudio: Navigate to File -> New Project... -> Version Control -> Git, enter the repository URL, and authenticate with your GitHub Personal Access Token (PAT).
+
+Restore the R package environment in the R Console (>):
+
+```{r}
+renv::restore()
+```
+#### Daily `renv` & Git Collaboration Commands
+| Goal / Workflow Task | Interface | Target Function / Command | Expected Outcome | 
+| :--- | :--- | :--- | :--- | 
+| Save new packages to lockfile | **`Console`** (`>`) | renv::snapshot() | Updates renv.lock with latest installed versions | 
+| Pull latest project updates | **`Terminal`** (`$`) | git pull | Fetches code and lockfile changes from GitHub |
+| Sync local library to lockfile | **`Console`** (`>`) | renv::restore() | Installs exact lockfile package versions locally |
+| Check environment sync status | **`Console`** (`>`) | renv::status() | Reports whether local library matches renv.lock |
 
 ### Cloning Your Workstation
 
@@ -232,7 +569,7 @@ If cloud computing resources are not necessary, alternative options include acce
 
 ## Acknowledgements
 
-Resources shared by [Eli Holmes](https://github.com/eeholmes), [Jonathan Peake](https://github.com/jonpeake), Josh Lee, and Ed Rogers; authored by [Alex Norelli](https://github.com/norellia-NOAA) and [Molly Stevens](https://github.com/mollystevens-noaa).
+Resources shared by [Eli Holmes](https://github.com/eeholmes), [Jonathan Peake](https://github.com/jonpeake), Josh Lee, and Ed Rogers; authored by [Alex Norelli](https://github.com/norellia-NOAA), [Molly Stevens](https://github.com/mollystevens-noaa), and [Stephanie Hopkins](https://github.com/ScHopkins2025).
 
 ### Disclaimer
 
